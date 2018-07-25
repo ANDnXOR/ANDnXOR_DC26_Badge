@@ -1,0 +1,24 @@
+HAI DC26
+WELCOME TO THE AND!XOR UNOFFICIAL DEFCON 26 BADGE!
+
+This is our third year, thanks to everyone helping make this happen. 
+
+SCREENSHOTS
+
+Screenshots can be taken by holding the LEFT and RIGHT buttons under the screen.
+These will be saved in the root directory. To convert the .raw files to .png
+use the following command:
+
+ffmpeg -vcodec rawvideo -f rawvideo -pix_fmt rgb565be -s 220x176 -i screenshot-24534.raw -f image2 -vcodec png image.png
+
+
+LULZCODE
+
+That's right, we made our own interpreter: LULZCODE an extension of LOLCODE.
+LULZCODE files are stored in the root directory. All LOLCODE features are 
+supported _except unicode_, sorry just couldn't make it fit. Check out our code,
+please, Zapp spent 9 months trolling himself with it. Modify it, break some 
+things, show off your work.
+
+KTHXBYE
+

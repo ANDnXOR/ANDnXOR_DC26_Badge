@@ -1,0 +1,14 @@
+AND!XOR DC26 Badge Custom Twitter Bling Mode
+
+Run the following commmands from the root of the SD card for best results.
+
+STEP 1 Download your twitter avatar:
+wget https://twitter.com/[USERNAME]/profile_image?size=original -O avatar.jpg
+Example:
+wget https://twitter.com/andnxor/profile_image?size=original -O avatar.jpg
+
+
+STEP 2 Convert the avatar to RAW and overwrite the default:
+ffmpeg -i avatar.jpg -f image2 -vf "scale=220:176:force_original_aspect_ratio=decrease,pad=220:176:(ow-iw)/2:(oh-ih)/2" -s 220x176 -pix_fmt rgb565be gfx/twitter.raw
+
+STEP 3 Profit

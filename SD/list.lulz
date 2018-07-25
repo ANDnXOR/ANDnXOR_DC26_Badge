@@ -1,0 +1,83 @@
+HOW IZ I do_list YR list
+
+  BTW Settings for list graphics
+  I HAS A list_item_height ITZ 10
+
+  ALL DARK
+
+  BTW Draw title bar
+  I IZ do_title_bar YR list'Z title MKAY
+
+  BTW Draw list items
+  SHOUT "SMALL"
+
+
+  IM IN YR list_loop
+    IM IN YR draw_loop UPPIN YR i TIL BOTH SAEM i AN list'Z count
+      I HAS A y ITZ SUM OF PRODUKT OF i AN list_item_height AN title_bar_height
+
+      BOTH SAEM list'Z selected AN i, O RLY?, YA RLY
+        CRAYON HACKER_RED
+        CATINABOX 0 DIFF OF y AN 1 HOW WIDE list_item_height HACKER_GRAY
+      NO WAI
+        CRAYON HACKER_GRAY
+        CATINABOX 0 DIFF OF y AN 1 HOW WIDE list_item_height DARK
+      OIC
+      LAZER 0 y
+      MEOW list'Z items'Z SRS i
+    IM OUTTA YR draw_loop
+
+    BTW Draw to screen
+    LOLOLOL
+
+    BTW Wait for button and assign to variable
+    I HAS A button ITZ POUNCE
+
+    BTW If up button pressed, then move up wrapping around to bottom
+    WHATSUP, O RLY?
+      YA RLY
+        list'Z selected R DIFF OF list'Z selected AN 1
+
+        BTW If selected < 0
+        DIFFRINT list'Z selected AN BIGGR OF list'Z selected AN 0, O RLY?
+        YA RLY
+          list'Z selected R DIFF OF list'Z count AN 1
+        OIC
+
+        BTW slow down the user
+        PAWS 100
+    OIC
+
+    BTW if down button pressed then move down wrapping around to top
+    WHATSDOWN, O RLY?
+      YA RLY
+        list'Z selected R SUM OF list'Z selected AN 1
+
+        BTW If selected >= count
+        BOTH SAEM list'Z selected AN BIGGR OF list'Z selected AN list'Z count, O RLY?
+          YA RLY
+            list'Z selected R 0
+          OIC
+
+          BTW slow down the user
+          PAWS 100
+    OIC
+
+    BTW Quit on left button
+    ISLEFF, O RLY?
+      YA RLY
+        PAWS 500
+        BAD KITTEH
+        FOUND YR FAIL
+    OIC
+
+    BTW Select on action button
+    ISGO, O RLY?
+      YA RLY
+        PAWS 500
+        BAD KITTEH
+        FOUND YR WIN
+    OIC
+
+  IM OUTTA YR list_loop
+IF U SAY SO

@@ -1,0 +1,136 @@
+HAI 2600
+  FREND "/sdcard/include.lulz"
+
+  I HAS A pdx ITZ 8                        BTW player x velocity
+  I HAS A pw ITZ QUOSHUNT OF HOW WIDE AN 5  BTW player width
+  I HAS A px ITZ DIFF OF QUOSHUNT OF HOW WIDE AN 2 AN QUOSHUNT OF pw AN 2 BTW player x
+  I HAS A py ITZ DIFF OF HOW TALL AN 4      BTW player y
+  I HAS A ph ITZ 3                          BTW player height
+  I HAS A pc ITZ SUM OF px AN QUOSHUNT OF pw AN 2
+  I HAS A br ITZ 4                          BTW ball radius
+  I HAS A bx ITZ QUOSHUNT OF HOW WIDE AN 2  BTW ball x
+  I HAS A by ITZ PRODUKT OF br AN 2         BTW ball y
+  I HAS A bdx ITZ 4                         BTW ball x delta
+  I HAS A bdy ITZ 4                         BTW ball y delta
+  I HAS A bx_max ITZ DIFF OF HOW WIDE AN br BTW max value for ball x coord
+  I HAS A bx_min ITZ br                     BTW min value for ball x coord
+  I HAS A by_max ITZ DIFF OF DIFF OF HOW TALL AN br AN PRODUKT OF ph AN 2 BTW max value for ball y coord
+  I HAS A by_min ITZ br                     BTW min value for ball y coord
+  I HAS A step_delay ITZ 5                  BTW delay between each step of the game
+  I HAS A game_over ITZ FAIL                BTW is game over?
+  I HAS A bounce_factor ITZ 3
+  I HAS A start_time ITZ TIX
+  I HAS A score ITZ 0
+
+  BTW Draw the current game
+  HOW IZ I draw
+    ALL DARK
+    BTW Draw ball
+    CATINAROUND bx by br HACKER_GREEN
+    BTW Draw player
+    CATINABOX px py pw ph HACKER_RED
+    BTW Draw score
+    SHOUT "LARGE"
+    LAZER 0 0
+    CRAYON GREENISH
+    score R QUOSHUNT OF DIFF OF TIX AN start_time AN 1000
+    MEOW score
+
+    LOLOLOL
+  IF U SAY SO
+
+  BTW Step the game (move ball etc)
+  HOW IZ I step
+    BTW calculate paddle center
+    pc R SUM OF px AN QUOSHUNT OF pw AN 2
+
+    bx R SUM OF bx AN bdx
+    by R SUM OF by AN bdy
+
+    BTW Handle logic for bouncing off of walls
+    BTW ball x >= x_max
+    BOTH SAEM bx AN BIGGR OF bx AN bx_max, O RLY?, YA RLY
+      bdx R DIFF OF 0 AN bdx
+    OIC
+    BTW ball x <= x_min
+    BOTH SAEM bx AN SMALLR OF bx AN bx_min, O RLY?, YA RLY
+      bdx R DIFF OF 0 AN bdx
+    OIC
+    BTW ball y <= y_min
+    BOTH SAEM by AN SMALLR OF by AN by_min, O RLY?, YA RLY
+      bdy R DIFF OF 0 AN bdy
+
+      BTW randomize x delta
+      bdx R DIFF OF CRAZY GO NUTS 12 AN 6
+    OIC
+
+    BTW handle logic for bouncing off of paddle or losing
+    BTW ball y >= y_max
+    BOTH SAEM by AN BIGGR OF by AN by_max, O RLY?, YA RLY
+      game_over R WIN   BTW assume game over
+
+      BTW ball is right of paddle left side
+      BOTH SAEM bx AN BIGGR OF bx AN px, O RLY?, YA RLY
+        BTW ball is also left of paddle right side
+        BOTH SAEM bx AN SMALLR OF bx AN SUM OF px AN pw, O RLY?, YA RLY
+          bdx R QUOSHUNT OF DIFF OF bx AN pc AN bounce_factor
+          BTW bounce
+          bdy R DIFF OF 0 AN bdy
+          BTW game not over, JK
+          game_over R FAIL
+        OIC
+      OIC
+    OIC
+  IF U SAY SO
+
+  SYSTUM "INTERRUPTS_OFF"
+  IM IN YR game_loop
+    I IZ step MKAY
+    I IZ draw MKAY
+
+    game_over, O RLY?, YA RLY
+      SHOUT "LARGE"
+      LAZER 30 80
+      CRAYON GREENISH
+      MEOW "Game Over :("
+      LOLOLOL
+
+      I HAS A high_score ITZ OHIMEMBER "score_pong"
+      BTW if score > high score, store
+      DIFFRINT score AN SMALLR OF score AN high_score, O RLY?, YA RLY
+        MEMBER "score_pong" score
+      OIC
+
+      PAWS 500
+      POUNCE
+      BAD KITTEH
+      GTFO
+    OIC
+
+    BTW Quit on go button. yolo
+    ISGO, O RLY?, YA RLY
+      BAD KITTEH
+      GTFO
+    OIC
+
+    ISLEFF, O RLY?, YA RLY
+      px R DIFF OF px AN pdx
+      BTW keep player on screen
+      BOTH SAEM px AN SMALLR OF px AN 0, O RLY?, YA RLY
+        px R 0
+      OIC
+    OIC
+
+    ISRIGHT, O RLY?, YA RLY
+      px R SUM OF px AN pdx
+      BTW keep player on screen
+      BOTH SAEM px AN BIGGR OF px AN DIFF OF HOW WIDE AN pw, O RLY?, YA RLY
+        px R DIFF OF HOW WIDE AN pw
+      OIC
+    OIC
+
+    BTW game delay
+    PAWS step_delay
+  IM OUTTA YR game_loop
+  SYSTUM "INTERRUPTS_ON"
+KTHXBYE

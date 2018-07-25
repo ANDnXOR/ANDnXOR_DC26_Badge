@@ -1,0 +1,9 @@
+HOW IZ I button YR label AN YR x AN YR y 
+  SHOUT "SMALL"
+  w R SUM OF HOW SPREAD label AN 20
+  h R SUM OF HOW BIG label AN 12
+  CATINABOX x y w h DARK
+  BOX x y w h HACKER_BLUE
+  LAZER SUM OF x AN 8 SUM OF y AN 3
+  MEOW label
+IF U SAY SO

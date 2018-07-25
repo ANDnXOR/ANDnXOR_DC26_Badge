@@ -1,0 +1,122 @@
+HOW IZ I create_menu YR menu
+  menu HAS A count ITZ 0
+  menu HAS A top ITZ 0
+  menu HAS A selected ITZ 0
+  menu HAS A label ITZ A BUKKIT
+  menu HAS A callback ITZ A BUKKIT
+  menu HAS A preview ITZ A BUKKIT
+  menu HAS A data ITZ A BUKKIT
+IF U SAY SO
+
+HOW IZ I add_item_to_menu YR menu AN YR label AN YR callback AN YR preview AN YR data
+  I HAS A i ITZ menu'Z count
+  menu'Z label HAS A SRS i ITZ label
+  menu'Z callback HAS A SRS i ITZ callback
+  menu'Z preview HAS A SRS i ITZ preview
+  menu'Z data HAS A SRS i ITZ data
+  menu'Z count R SUM OF i AN 1
+IF U SAY SO
+
+HOW IZ I do_menu YR menu
+  I HAS A max_count ITZ SMALLR OF 5 AN menu'Z count
+  I HAS A menu_item_height ITZ 25
+  I HAS A redraw ITZ WIN
+
+  IM IN YR menu_loop
+
+    redraw, O RLY?, YA RLY
+      BTW Just in case make background black
+      ALL DARKISH
+      BTW Draw background
+      KATNIP menu'Z preview'Z SRS menu'Z selected 0 0 HOW WIDE HOW TALL
+
+      BTW Render top bar
+      I HAS A label ITZ SMOOSH OHIMEMBER "name" "[" OHIMEMBER "botnet_level" "]" MKAY
+      I IZ do_title_bar YR label MKAY
+
+      SHOUT "LARGE"
+      IM IN YR render_item_loop UPPIN YR i TIL BOTH SAEM i AN max_count
+        I HAS A current_item ITZ SUM OF i AN menu'Z top
+        BOTH SAEM current_item AN menu'Z selected, O RLY?, YA RLY
+          CRAYON WESTERN_YELLOW
+        NO WAI
+          CRAYON WESTERN_ORANGE
+        OIC
+
+        BTW Render the text centered
+        I HAS A text ITZ menu'Z label'Z SRS current_item
+        I HAS A text_width ITZ HOW SPREAD text
+        I HAS A text_x ITZ QUOSHUNT OF DIFF OF HOW WIDE AN text_width AN 2
+        I HAS A text_y ITZ SUM OF title_bar_height AN PRODUKT OF i AN menu_item_height
+        LAZER text_x text_y
+        MEOW text
+      IM OUTTA YR render_item_loop
+      LOLOLOL
+
+      BTW clear redraw flag
+      redraw R FAIL
+    OIC
+
+    BTW Wait for button and assign to variable
+    POUNCE
+
+    BTW If up button pressed, then move up stopping at the top
+    WHATSUP, O RLY?
+      YA RLY
+        menu'Z selected R DIFF OF menu'Z selected AN 1
+
+        BTW If selected < 0
+        DIFFRINT menu'Z selected AN BIGGR OF menu'Z selected AN 0, O RLY?, YA RLY
+          menu'Z selected R 0
+        OIC
+
+        BTW If selected < top, scroll
+        DIFFRINT menu'Z selected AN BIGGR OF menu'Z selected AN menu'Z top, O RLY?, YA RLY
+          menu'Z top R DIFF OF menu'Z top AN 1
+        OIC
+
+        BTW slow down the user
+        PAWS 20
+
+        redraw R WIN
+    OIC
+
+    BTW if down button pressed then move down stopping at the bottom
+    WHATSDOWN, O RLY?
+      YA RLY
+        menu'Z selected R SUM OF menu'Z selected AN 1
+
+        BTW If selected >= count
+        BOTH SAEM menu'Z selected AN BIGGR OF menu'Z selected AN menu'Z count, O RLY?, YA RLY
+          menu'Z selected R DIFF OF menu'Z count AN 1
+        OIC
+
+        BTW If selected >= top + max_count, scroll
+        BOTH SAEM menu'Z selected AN BIGGR OF menu'Z selected AN SUM OF menu'Z top AN max_count, O RLY?, YA RLY
+          menu'Z top R SUM OF menu'Z top AN 1
+        OIC
+
+        BTW slow down the user
+        PAWS 20
+
+        redraw R WIN
+    OIC
+    ISGO, O RLY?
+      YA RLY
+        PAWS 100
+        BAD KITTEH
+        I IZ menu'Z callback'Z SRS menu'Z selected YR menu'Z data'Z SRS menu'Z selected MKAY
+        redraw R WIN
+        PAWS 100
+        BAD KITTEH
+    OIC
+
+    BTW Quit on left button
+    ISLEFF, O RLY?
+      YA RLY
+        PAWS 500
+        BAD KITTEH
+        GTFO
+    OIC
+  IM OUTTA YR menu_loop
+IF U SAY SO

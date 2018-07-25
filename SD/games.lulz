@@ -1,0 +1,31 @@
+HAI 2600
+  FREND "/sdcard/include.lulz"
+  FREND "/sdcard/title_bar.lulz"
+  FREND "/sdcard/menu.lulz"
+
+  HOW IZ I games_chip8 YR data
+    TROLL "/sdcard/chip8.lulz"
+  IF U SAY SO
+
+  HOW IZ I games_flappy YR data
+    TROLL "/sdcard/flappy.lulz"
+  IF U SAY SO
+
+  HOW IZ I games_pong YR data
+    TROLL "/sdcard/pong.lulz"
+  IF U SAY SO
+
+  HOW IZ I games_ski YR data
+    SYSTUM "SKI"
+  IF U SAY SO
+
+
+  I HAS A menu ITZ A BUKKIT
+  I IZ create_menu YR menu MKAY
+  I IZ add_item_to_menu YR menu AN YR "Ski Free" AN YR games_ski AN YR "/sdcard/bg/skifree.raw" AN YR WIN MKAY
+  I IZ add_item_to_menu YR menu AN YR "Pong" AN YR games_pong AN YR "/sdcard/bg/and!xor.raw" AN YR WIN MKAY
+  I IZ add_item_to_menu YR menu AN YR "CHIP-8" AN YR games_chip8 AN YR "/sdcard/bg/chip8.raw" AN YR WIN MKAY
+  I IZ add_item_to_menu YR menu AN YR "Flappy" AN YR games_flappy AN YR "/sdcard/bg/flappy.raw" AN YR WIN MKAY
+  I IZ do_menu YR menu MKAY
+
+KTHXBYE

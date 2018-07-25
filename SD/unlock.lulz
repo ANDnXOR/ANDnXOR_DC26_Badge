@@ -1,0 +1,81 @@
+HAI 2600
+  FREND "/sdcard/include.lulz"
+  FREND "/sdcard/popup.lulz"
+OBTW
+0000000000000001 = 1 ==>  (U / 2^0) MOD 2
+0000000000000010 = 2 ==>  (U / 2^1) MOD 2
+0000000000000100 = 4 ==>  (U / 2^2) MOD 2
+
+5 ==> 101
+UNLOCK 0 --> 5 MOD 2 --> 1
+UNLOCK 1 --> 2 MOD 2 --> 0
+UNLOCK 2 --> 25 MOD 2 --> 1
+TLDR
+
+  BTW Capture the user
+  IM IN YR loop
+    I HAS A shift ITZ 1
+    I HAS A unlock ITZ L33T
+    BTW Top half of screen have indicators
+    BTW 55x22 each
+    I HAS A w ITZ QUOSHUNT OF HOW WIDE AN 4
+    I HAS A h ITZ QUOSHUNT OF QUOSHUNT OF HOW TALL AN 2 AN 4
+    BTW Clear the screen cuz
+    ALL DARK
+
+    BTW Check each unlock
+    IM IN YR loop UPPIN YR i TIL BOTH SAEM i AN 16
+      I HAS A check ITZ MOD OF QUOSHUNT OF unlock AN shift AN 2
+      I HAS A x ITZ PRODUKT OF w AN MOD OF i AN 4
+      I HAS A y ITZ PRODUKT OF h AN QUOSHUNT OF i AN 4
+
+      BTW They have this unlock
+      BOTH SAEM check AN 1, O RLY?, YA RLY
+        CATINABOX x y w h GREENISH
+        BOX x y w h DARK
+      BTW NOPE
+      OIC
+      shift R PRODUKT OF shift AN 2
+    IM OUTTA YR loop
+
+    BTW Draw high scores from games
+    SHOUT "MEDIUM"
+    LAZER 0 QUOSHUNT OF HOW TALL AN 2
+    CRAYON GREENISH
+    MEOW SMOOSH "Pong: " AN OHIMEMBER "score_pong" AN ":)" MKAY
+    MEOW SMOOSH "Ski: " AN OHIMEMBER "score_ski" AN ":)" MKAY
+    MEOW ":)Have a code? Press:)Action Button"
+
+
+    BTW Push buffer
+    LOLOLOL
+
+    BTW wait for user input
+    POUNCE
+
+    BTW if they press the action button, allow them to validate an unlock
+    ISGO, O RLY?, YA RLY
+      I HAS A input ITZ MEOWMIX "Enter Code" "" 8
+      I HAS A popup ITZ A BUKKIT
+      popup HAS A title ITZ "UNLOCK"
+      popup HAS A left ITZ ""
+      popup HAS A right ITZ "Ok"
+
+      CHEEZBURGER input, O RLY?, YA RLY
+        BTW Do nothing
+      NO WAI
+        popup HAS A body ITZ SMOOSH "'" AN input AN "' is invalid :(" MKAY
+      OIC
+
+      I IZ do_popup YR popup MKAY
+    OIC
+
+    BTW quit on left button
+    ISLEFF, O RLY?, YA RLY
+      BAD KITTEH
+      GTFO
+    OIC
+
+    BAD KITTEH
+  IM OUTTA YR loop
+KTHXBYE

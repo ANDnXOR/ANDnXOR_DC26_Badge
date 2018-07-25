@@ -1,0 +1,54 @@
+HAI 2600
+  FREND "/sdcard/include.lulz"
+
+  BTW listen for broadcasts
+  IM IN YR loop
+    I HAS A broadcast ITZ WHO DIS
+
+    ALL DARK
+    SHOUT "LARGE"
+    CRAYON GREENISH
+    LAZER 0 0
+    MEOW "Broadcast:)"
+
+    SHOUT "MEDIUM"
+    MEOW "Last Broadcast Received: :)"
+    CRAYON LIGHT
+    MEOW broadcast'Z MESSAGE
+    MEOW ":)"
+
+    CRAYON GREENISH
+    MEOW "Transmitting: :)"
+    CRAYON LIGHT
+    MEOW SAY WUT
+    MEOW ":)"
+
+    CRAYON GREENISH
+    SHOUT "SMALL"
+    LAZER 0 160
+    MEOW "Set Broadcast w/ [Action]"
+    LOLOLOL
+
+    PAWS 100
+
+    BTW get user input to set chat message when action pressed
+    ISGO, O RLY?, YA RLY
+      PAWS 50
+      BAD KITTEH
+
+      I HAS A message ITZ MEOWMIX "Message" "" 10
+      HOLLABACK message
+
+      PAWS 50
+      BAD KITTEH
+    OIC
+
+    ISLEFF, O RLY?, YA RLY
+      PAWS 50
+      BAD KITTEH
+      GTFO
+    OIC
+
+    PAWS 200
+  IM OUTTA YR loop
+KTHXBYE

@@ -1,0 +1,38 @@
+HAI 2600
+  FREND "/sdcard/include.lulz"
+  FREND "/sdcard/menu.lulz"
+  FREND "/sdcard/title_bar.lulz"
+
+  I HAS A chip8_path ITZ "/sdcard/CHIP8"
+  I HAS A chip8_files ITZ DAB chip8_path
+  I HAS A file_count ITZ HOW MANY IN chip8_files
+  I HAS A menu ITZ A BUKKIT
+  I IZ create_menu YR menu MKAY
+
+  HOW IZ I play YR data
+    NACHOS data
+  IF U SAY SO
+
+  IM IN YR menu_build_loop UPPIN YR i TIL BOTH SAEM i AN file_count
+    I HAS A name ITZ chip8_files'Z SRS i
+    I HAS A ext_index ITZ 0
+
+    IM IN YR parse_file_name UPPIN YR index TIL BOTH SAEM index AN KOUNT name
+      BTW Reverse index (walk backwards)
+      I HAS A r_index ITZ DIFF OF KOUNT name AN index
+      BOTH SAEM MAEK CUT name r_index A LETR AN ".", O RLY?, YA RLY
+        ext_index R SUM OF r_index AN 1
+        GTFO
+      OIC
+    IM OUTTA YR parse_file_name
+
+    I HAS A ext ITZ GNAW name ext_index KOUNT name
+    EITHER OF BOTH SAEM ext AN "ch8" AN BOTH SAEM ext AN "sc", O RLY?, YA RLY
+      I HAS A label ITZ GNAW name SUM OF KOUNT chip8_path AN 1 DIFF OF ext_index AN 1
+      I IZ add_item_to_menu YR menu AN YR label AN YR play AN YR "/sdcard/bg/and!xor.raw" AN YR name MKAY
+    OIC
+
+  IM OUTTA YR menu_build_loop
+
+  I IZ do_menu YR menu MKAY
+KTHXBYE

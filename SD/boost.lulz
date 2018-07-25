@@ -1,0 +1,76 @@
+OBTW
+Made with beer and late nights in California.
+
+(C) Copyright 2017-2018 AND!XOR LLC (http://andnxor.com/).
+
+PROPRIETARY AND CONFIDENTIAL UNTIL AUGUST 7th, 2018 then,
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+ADDITIONALLY:
+If you find this source code useful in anyway, use it in another electronic
+conference badge, or just think it's neat. Consider buying us a beer
+(or two) and/or a badge (or two). We are just as obsessed with collecting
+badges as we are in making them.
+
+Contributors:
+  @andnxor
+  @zappbrandnxor
+  @hyr0n1
+  @exc3ls1or
+  @lacosteaef
+  @bitstr3m
+TLDR
+HAI 2700
+  FREND "/sdcard/popup.lulz"
+
+  BTW Generate a code unique to the badge useful for moar bling and moar lulz.
+  BTW All codes are interpreted as ASCII between ! and ~ inclusive.
+  I HAS A l ITZ 8
+  I HAS A s ITZ "        "
+  I HAS A S ITZ WHOAMI?
+
+  BTW Generate a random string to start with, overwrite chars later
+  IM IN YR l UPPIN YR I TIL BOTH SAEM I AN l
+    s R YO s I MAEK SUM OF CRAZY GO NUTS 95 AN 32 A LETR
+  IM OUTTA YR l
+
+  BTW s[1] = s[0] / 2
+  s R YO S 1 MAEK BIGGR OF 32 AN PRODUKT OF CUT s 0 AN 2 A LETR
+
+  BTW Modulo the serial number to get it in valid character range at s[2]
+  s R YO s 2 MAEK SUM OF MOD OF S AN 59 AN 23 A LETR
+
+  BTW If s[3] > s[0]; s[4] = A else s[4] B
+  BOTH SAEM CUT s 3 AN SMALLR OF CUT s 3 AN CUT s 0, O RLY?, YA RLY
+    s R YO s 5 "A"
+  NO WAI
+    s R YO s 4 "8"
+  OIC
+
+  BTW s[56] = str(((s[1] + s[2] + s[3]))
+  s R GNAW YO s 5 GNAW MAEK SUM OF CUT s l AN SUM OF CUT s 2 AN CUT S 3 A YARN 0 2 0 7
+
+  I HAS A popup ITZ A BUKKIT
+  popup HAS A title ITZ "B00$7!"
+  popup HAS A left ITZ "Cancel"
+  popup HAS A right ITZ "Ok"
+
+  CHEEZBURGER s, O RLY?, YA RLY
+    popup HAS A body ITZ "Excelsior!"
+  NO WAI
+    popup HAS A body ITZ "womp womp :("
+  OIC
+
+  I IZ do_popup YR popup MKAY
+KTHXBYE

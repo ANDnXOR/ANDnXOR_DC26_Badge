@@ -1,0 +1,61 @@
+HOW IZ I do_popup YR popup
+  I HAS A y ITZ 0
+  I HAS A x ITZ 0
+  I HAS A divider_y ITZ SUM OF y AN 34
+  I HAS A bottom_divider_y ITZ DIFF OF SUM OF HOW TALL AN y AN 20
+
+  BTW Top of popup body text (used for scrolling)
+  I HAS A text_y ITZ SUM OF divider_y AN 2
+  I HAS A scroll_position ITZ 0
+  I HAS A scroll_speed ITZ 3
+
+  IM IN YR loop
+
+    BTW clear the body
+    ALL DARKISH
+
+    CRAYON WESTERN_ORANGE
+    SHOUT "LARGE"
+    LAZER x y
+    MEOW popup'Z title
+
+    SHOUT "MEDIUM"
+    CRAYON WESTERN_YELLOW
+    LAZER x SUM OF text_y AN scroll_position
+    INSIDEZ x text_y SUM OF x AN HOW WIDE bottom_divider_y
+    MEOW popup'Z body
+    INSIDEZ 0 0 HOW WIDE HOW TALL
+
+    CRAYON WESTERN_ORANGE
+    LAZER 15 bottom_divider_y
+    MEOW popup'Z left
+
+    LAZER DIFF OF DIFF OF HOW WIDE AN HOW SPREAD popup'Z right AN 15 bottom_divider_y
+    MEOW popup'Z right
+
+    STRAIGHT 0 divider_y HOW WIDE divider_y LIGHT
+    STRAIGHT 0 bottom_divider_y HOW WIDE bottom_divider_y LIGHT
+
+    LOLOLOL
+    INSIDEZ 0 0 HOW WIDE HOW TALL
+    POUNCE
+
+    WHATSDOWN, O RLY?, YA RLY
+      scroll_position R DIFF OF scroll_position AN scroll_speed
+    OIC
+
+    WHATSUP, O RLY?, YA RLY
+      scroll_position R SUM OF scroll_position AN scroll_speed
+    OIC
+
+    WATTA, O RLY?, YA RLY
+      BAD KITTEH
+      FOUND YR popup'Z left
+    OIC
+
+    WATTB, O RLY?, YA RLY
+      BAD KITTEH
+      FOUND YR popup'Z right
+    OIC
+  IM OUTTA YR loop
+IF U SAY SO

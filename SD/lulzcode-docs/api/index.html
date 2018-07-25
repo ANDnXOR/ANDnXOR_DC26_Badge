@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>API - LULZCODE</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+         
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">LULZCODE</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Home</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../lulzcode/">LULZCODE</a>
+                </li>
+            
+            
+            
+                <li class="active">
+                    <a href="./">API</a>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                    <li >
+                        <a rel="next" href="../lulzcode/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+      
+    
+        <li class="main active"><a href="#menu">Menu</a></li>
+        
+            <li><a href="#bukkit-definition">BUKKIT definition</a></li>
+        
+            <li><a href="#helpers">Helpers</a></li>
+        
+            <li><a href="#execution">Execution</a></li>
+        
+            <li><a href="#return-value">Return Value</a></li>
+        
+            <li><a href="#example">Example</a></li>
+        
+    
+        <li class="main "><a href="#popup">Popup</a></li>
+        
+            <li><a href="#bukkit-definition_1">BUKKIT definition</a></li>
+        
+            <li><a href="#execution_1">Execution</a></li>
+        
+            <li><a href="#return-value_1">Return Value</a></li>
+        
+            <li><a href="#example_1">Example</a></li>
+        
+    
+        <li class="main "><a href="#title-bar">Title Bar</a></li>
+        
+    
+        <li class="main "><a href="#global-colors">Global Colors</a></li>
+        
+    
+    
+    </ul>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="menu">Menu</h3>
+<p>Contained in <strong>/sdcard/menu.lol</strong></p>
+<h4 id="bukkit-definition">BUKKIT definition</h4>
+<ul>
+<li><code>count</code> - Number of menu items contained in the BUKKIT</li>
+<li><code>top</code> - Index of first item to display in the list</li>
+<li><code>selected</code> - Index of currently selected item</li>
+<li><code>label</code> - BUKKIT of menu labels</li>
+<li><code>callback</code> - BUKKIT of menu callbacks</li>
+<li><code>preview</code> - BUKKIT of paths to preview images (must be in RAW format and 220x176)</li>
+</ul>
+<h4 id="helpers">Helpers</h4>
+<ul>
+<li><code>create_menu YR &lt;menu&gt; MKAY</code> - Menu BUKKIT constructor</li>
+<li><code>add_item_to_menu YR &lt;menu&gt; AN YR &lt;label&gt; AN YR &lt;callback&gt; AN YR &lt;preview&gt; MKAY</code> - Add a menu item to the menu BUKKIT</li>
+</ul>
+<h4 id="execution">Execution</h4>
+<p>Run <code>do_menu</code> passing the BUKKIT. The function will block until the menu quits which is usually triggered by the user. When an item is selected the associated callback will be run.</p>
+<h4 id="return-value">Return Value</h4>
+<p>None.</p>
+<h4 id="example">Example</h4>
+<pre><code>  FREND &quot;/sdcard/include.lol&quot;
+  FREND &quot;/sdcard/menu.lol&quot;
+
+  HOW IZ I first_item_cb
+    VISIBLE &quot;First Item Selected&quot;
+  IF U SAY SO
+
+  HOW IZ I second_item_cb
+    VISIBLE &quot;Second Item Selected&quot;
+  IF U SAY SO
+
+  I HAS A menu ITZ A BUKKIT
+  I IZ create_menu YR menu MKAY
+  I IZ add_item_to_menu YR menu AN YR &quot;Bling&quot; AN YR menu_bling AN YR &quot;/sdcard/bling/hypnotoad1.preview&quot; MKAY
+  I IZ add_item_to_menu YR menu AN YR &quot;Settings&quot; AN YR menu_settings AN YR &quot;/sdcard/bling/settings.preview&quot; MKAY
+
+  I IZ do_menu YR menu MKAY
+</code></pre>
+
+<h3 id="popup">Popup</h3>
+<p>Contained in <strong>/sdcard/popup.lol</strong></p>
+<h4 id="bukkit-definition_1">BUKKIT definition</h4>
+<ul>
+<li><code>title</code> - Text to put in the title bar - careful, limited space</li>
+<li><code>body</code> - Text to put in the body. This will be scrollable</li>
+<li><code>left</code> - Text to put in the left button. </li>
+<li><code>Right</code> - Text to put in the right button.</li>
+</ul>
+<h4 id="execution_1">Execution</h4>
+<p>Run <code>do_popup</code> passing the BUKKIT. The function will block until the user selects an option (left or right).</p>
+<h4 id="return-value_1">Return Value</h4>
+<p>The text in the button selected by the user.</p>
+<h4 id="example_1">Example</h4>
+<pre><code> HAI 100
+  FREND &quot;/sdcard/include.lol&quot;
+  FREND &quot;/sdcard/popup.lol&quot;
+
+  I HAS A popup ITZ A BUKKIT
+  popup HAS A title ITZ &quot;Popup Test&quot;
+  popup HAS A body ITZ &quot;This is a test of the popup in LULZCODE.&quot;
+  popup HAS A left ITZ &quot;Cancel&quot;
+  popup HAS A right ITZ &quot;Ok&quot;
+  VISIBLE &quot;Popup result = &quot; I IZ do_popup YR popup MKAY
+KTHXBYE
+</code></pre>
+
+<h3 id="title-bar">Title Bar</h3>
+<p>Run <code>do_title_bar</code> passing a short label to render. This will render to the gfx buffer but not push. Use <code>LOLOLOL</code> when done rendering the UI.</p>
+<p>The location of the line in the title bar is globally stored in <code>title_bar_height</code> variable.</p>
+<h3 id="global-colors">Global Colors</h3>
+<p>Contained in /sdcard/include.lol</p>
+<ul>
+<li>Black: <code>DARK</code></li>
+<li>White: <code>LIGHT</code></li>
+<li>Blue: `BLUEISH</li>
+<li>Green: <code>GREENISH</code></li>
+<li>Red: <code>REDISH</code></li>
+<li>Yellow: <code>YELLOWISH</code></li>
+<li>DEFCON Green: <code>HACKER_GREEN</code></li>
+<li>DEFCON Red: <code>HACKER_RED</code></li>
+<li>DEFCON Gray: <code>HACKER_GRAY</code></li>
+<li>DEFCON Blue: <code>HACKER_BLUE</code></li>
+</ul></div>
+                </div>
+        </div>
+
+    <hr>
+    <footer class="container">
+        
+        <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and <a href="http://kristopolous.github.io/BOOTSTRA.386/">BOOTSTRA.386</a>.</center>
+    </footer>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+    </body>
+</html>

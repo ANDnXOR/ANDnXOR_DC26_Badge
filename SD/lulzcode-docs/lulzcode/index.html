@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>LULZCODE - LULZCODE</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+         
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">LULZCODE</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Home</a>
+                </li>
+            
+            
+            
+                <li class="active">
+                    <a href="./">LULZCODE</a>
+                </li>
+            
+            
+            
+                <li >
+                    <a href="../api/">API</a>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                    <li >
+                        <a rel="next" href="..">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../api/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+      
+    
+        <li class="main active"><a href="#lulzcode">LULZCODE</a></li>
+        
+            <li><a href="#api">API</a></li>
+        
+            <li><a href="#file-extensions">File extensions</a></li>
+        
+    
+        <li class="main "><a href="#frends">FRENDs</a></li>
+        
+    
+        <li class="main "><a href="#troll">TROLL</a></li>
+        
+    
+        <li class="main "><a href="#letr">LETR</a></li>
+        
+    
+        <li class="main "><a href="#yarn-manipulation">YARN Manipulation</a></li>
+        
+    
+        <li class="main "><a href="#bukkits">BUKKITS</a></li>
+        
+    
+        <li class="main "><a href="#color">Color</a></li>
+        
+    
+        <li class="main "><a href="#lcd-graphics">LCD Graphics</a></li>
+        
+            <li><a href="#screen-buffer">Screen buffer</a></li>
+        
+            <li><a href="#text">Text</a></li>
+        
+            <li><a href="#shapes">Shapes</a></li>
+        
+            <li><a href="#graphics">Graphics</a></li>
+        
+    
+        <li class="main "><a href="#leds">LEDs</a></li>
+        
+    
+        <li class="main "><a href="#bling">Bling!</a></li>
+        
+    
+        <li class="main "><a href="#buttons">Buttons</a></li>
+        
+    
+        <li class="main "><a href="#user-input">User Input</a></li>
+        
+    
+        <li class="main "><a href="#badge-state">Badge State</a></li>
+        
+    
+        <li class="main "><a href="#globals">Globals</a></li>
+        
+    
+        <li class="main "><a href="#constants">Constants</a></li>
+        
+    
+        <li class="main "><a href="#random-values">Random values</a></li>
+        
+    
+        <li class="main "><a href="#accelerometer">Accelerometer</a></li>
+        
+    
+        <li class="main "><a href="#i2c">I2C</a></li>
+        
+    
+        <li class="main "><a href="#system-calls">System Calls</a></li>
+        
+    
+        <li class="main "><a href="#peers">Peers</a></li>
+        
+    
+        <li class="main "><a href="#time">Time</a></li>
+        
+    
+        <li class="main "><a href="#files">Files</a></li>
+        
+    
+        <li class="main "><a href="#chip-8">CHIP-8</a></li>
+        
+    
+        <li class="main "><a href="#unlocks">Unlocks</a></li>
+        
+    
+        <li class="main "><a href="#token-reference">Token Reference</a></li>
+        
+    
+    
+    </ul>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="lulzcode">LULZCODE</h1>
+<p>This page documents everything we added to LOLCODE to make LULZCODE.</p>
+<p><img alt="" src="https://media.giphy.com/media/d2jibZKKA0k3RUgU/source.gif" /></p>
+<h2 id="api">API</h2>
+<p>LULZCODE implements API-level checking (as a warning). Current API-level is <em>2600</em>. All lulzcode files should start with <code>HAI 2600</code> and end with <code>KTHXBYE</code></p>
+<h2 id="file-extensions">File extensions</h2>
+<p>To work with the atom extensions (code highlighting, completion, etc) LULZCODE files should end with <code>.lulz</code> extensions.</p>
+<h1 id="frends">FRENDs</h1>
+<p><img alt="" src="https://media.giphy.com/media/aC45M5Q4D07Pq/giphy.gif" /></p>
+<p>For code maintainability and portability, <code>FREND</code> has been added to LULZCODE. It is functionally equivalent to <code>#include</code> in c. <code>FREND</code> can be included recursively. However, this is not recommended as the same file may be included multiple times. It is a best practice only to make <code>FREND</code>s at the top level LULZCODE file.</p>
+<ul>
+<li><code>FREND "path"</code></li>
+</ul>
+<h1 id="troll">TROLL</h1>
+<ul>
+<li><code>TROLL "&lt;path&gt;"</code> - Execute another LULZCODE file. The LULZCODE pipeline can be memory intensive and it is not recommended to do this recursively as a new LULZCODE context is established for each <code>TROLL</code></li>
+</ul>
+<h1 id="letr">LETR</h1>
+<p>One type was added to LULZCODE: <em>LETR</em> in addition to <em>YARN</em>, <em>NOOB</em>, <em>TROOF</em>, etc.</p>
+<p><code>LETR</code> is a single character (<em>char</em> in C).</p>
+<p>Example, this does an ascii conversion:</p>
+<pre><code>I HAS A var ITZ 65
+VISIBLE MAEK var A LETR
+</code></pre>
+
+<h1 id="yarn-manipulation">YARN Manipulation</h1>
+<p><img alt="" src="https://media.giphy.com/media/jkAs9C3OoA9Nu/giphy.gif" /></p>
+<ul>
+<li><code>KOUNT "&lt;YARN&gt;"</code>: Calculates <em>YARN</em> length.</li>
+<li><code>GNAW "&lt;YARN&gt;" &lt;start&gt; &lt;end&gt;</code>: Substring of a <em>YARN</em></li>
+<li><code>CUT "&lt;YARN&gt;" &lt;index&gt;</code>: Gets the ascii decimal value of a single <em>LETR</em> in a <em>YARN</em></li>
+<li><code>YO "&lt;YARN&gt;" &lt;index&gt; "&lt;YARN&gt;"</code>: Overwrites part of a <em>YARN</em></li>
+</ul>
+<p>Example:</p>
+<pre><code>BTW Prints 11
+VISIBLE KOUNT &quot;Hello World&quot;
+
+BTW Returns llo
+GNAW &quot;Hello World&quot; 2 4
+
+BTW Returns 111
+VISIBLE CUT &quot;Hello World&quot; 4 
+
+BTW Prints l
+VISIBLE MAEK CUT &quot;Hello World&quot; 4 A LETR
+
+BTW Prints Hello Badge
+I HAS A text ITZ &quot;Hello World!&quot;
+text R YO text 6 &quot;Badge&quot;
+</code></pre>
+
+<h1 id="bukkits">BUKKITS</h1>
+<p><img alt="" src="https://media.giphy.com/media/kpCm78oOxQ9nq/giphy.gif" /></p>
+<p>LULZCODE uses LOLCODE BUKKITs but extends slightly.</p>
+<ul>
+<li><code>HOW MANY IN &lt;BUKKIT&gt;</code> - Counts the items in a BUKKIT</li>
+</ul>
+<h1 id="color">Color</h1>
+<p>Colors are shared between LEDs and LCD. The LEDs use 32bit or discreet R, G, B values whereas the LCD uses 565 (16-bit) colors. These functions help with conversion between various colors.</p>
+<ul>
+<li><code>ROYGEEBIFF2 &lt;r&gt; &lt;g&gt; &lt;b&gt;</code> - Convert an RGB value to 565 color (for LCD) where <em>r, g, b</em> are 0 to 255</li>
+<li><code>HSSSVEE2 &lt;h&gt; &lt;s&gt; &lt;v&gt;</code> - Convert discreet hue saturation and value to 565 color (for LCD) where <em>h, s, v</em> are 0 to 255</li>
+<li><code>HSSSVEE2BLINKY &lt;h&gt; &lt;s&gt; &lt;v&gt;</code> - Convert discreet hue saturation and value to single 24-bit RGB value (for LEDs) where <em>h, s, v</em> are 0 to 255</li>
+</ul>
+<h1 id="lcd-graphics">LCD Graphics</h1>
+<p><img alt="" src="https://media.giphy.com/media/13i92xSR3AMx3y/source.gif" /></p>
+<p>There are a couple constants available to help with graphics.</p>
+<ul>
+<li><code>HOW WIDE</code> - returns integer containing width in pixels of the display</li>
+<li><code>HOW TALL</code> - returns integer containing height in pixels of the display</li>
+</ul>
+<h2 id="screen-buffer">Screen buffer</h2>
+<p>All graphics commands like <code>SHOUT</code> and <code>MEOW</code> and <code>STRAIGHT</code> draw to a screen buffer. The <code>LOLOLOL</code> command must be used to push the buffer to the screen.</p>
+<h2 id="text">Text</h2>
+<ul>
+<li><code>CRAYON &lt;color&gt;</code> - Set the current font color. Use <code>ROYGEEBIFF2</code> to generate a 565 color.</li>
+<li><code>SHOUT "&lt;value&gt;"</code> - Set the current font. Valid values:<em>SMALL</em>, <em>MEDIUM</em>, <em>LARGE</em>, <em>LUDICROUS</em></li>
+<li><code>HOW SPREAD "&lt;YARN&gt;"</code> - Measure text width of <em>YARN</em> using current font</li>
+<li><code>HOW BIG "&lt;YARN&gt;"</code> - Measure text height of <em>YARN</em> using current font</li>
+<li><code>LAZER &lt;x&gt; &lt;y&gt;</code> - Move the cursor to X, Y coordinates. <em>Note: Cursor is moved relative to current font</em></li>
+<li><code>INSIDEZ &lt;x&gt; &lt;y&gt; &lt;width&gt; &lt;height&gt;</code> - Set the cursor area (for word wrapping and clipping purposes) </li>
+<li><code>MEOW "&lt;text&gt;"</code> - Print text to screen using current font at the current cursor location</li>
+</ul>
+<p>Example:</p>
+<pre><code>BTW Set current font color to red
+CRAYON ROYGEEBIFF2 255 0 0
+BTW Use a large font
+SHOUT &quot;LARGE&quot;
+BTW Move cursor to origin
+LAZER 0 0
+BTW Print
+MEOW &quot;Hello World&quot;
+BTW Push screen buffer
+LOLOLOL
+</code></pre>
+
+<h2 id="shapes">Shapes</h2>
+<ul>
+<li><code>ALL &lt;color&gt;</code> - Fill the screen with a color</li>
+<li><code>DOT &lt;x&gt; &lt;y&gt; &lt;color&gt;</code> - Draw a single pixel with a color</li>
+<li><code>ROUND &lt;x&gt; &lt;y&gt; &lt;radius&gt; &lt;color&gt;</code> - Draw circle </li>
+<li><code>CATINAROUND &lt;x&gt; &lt;y&gt; &lt;radius&gt; &lt;color&gt;</code> - filled circle</li>
+<li><code>BOX &lt;x&gt; &lt;y&gt; &lt;w&gt; &lt;h&gt; &lt;color&gt;</code> - Draw a rectangle</li>
+<li><code>CATINABOX &lt;x&gt; &lt;y&gt; &lt;w&gt; &lt;h&gt; &lt;color&gt;</code> - Draw a filled rectangle</li>
+<li><code>STRAIGHT &lt;x1&gt; &lt;y1&gt; &lt;x2&gt; &lt;y2&gt; &lt;color&gt;</code> - Draw a line between x1,y1 and x2,y2 with a color</li>
+</ul>
+<h2 id="graphics">Graphics</h2>
+<ul>
+<li><code>KATNIP "&lt;path_to_file&gt;" &lt;x&gt; &lt;y&gt; &lt;w&gt; &lt;h&gt;</code> - Draw a raw file from SD card at x, y with width and height</li>
+</ul>
+<p>Example: </p>
+<pre><code>BTW Draw an image at 0,0 with 100x100 dimensions then push the buffer
+KATNIP &quot;/sdcard/gfx/image.raw&quot; 0 0 100 100
+LOLOLOL
+</code></pre>
+
+<h1 id="leds">LEDs</h1>
+<p><img alt="" src="https://media.giphy.com/media/ArAgo5dU2z2xO/giphy.gif" /></p>
+<p>Like the LCD, LEDs are buffered. After setting color values for LEDs, be sure to push the LED buffer with <code>LOLOL</code>.  <strong>Note:</strong> The Eye LED is not buffered.</p>
+<ul>
+<li><code>BLINK &lt;index&gt; &lt;color&gt;</code> - Set a single LED at index (0-30) to a 24-bit RGB value</li>
+<li><code>BLINK &lt;index&gt; &lt;r&gt; &lt;g&gt; &lt;b&gt;</code> - set a single LED at index (0-30) to discreet R G B values</li>
+<li><code>BLINKIES &lt;color&gt;</code> - Set all LEDs to a 24-bit RGB value</li>
+<li><code>BLINKIES &lt;r&gt; &lt;g&gt; &lt;b&gt;</code> - Set all LEDs to discreet R G B values</li>
+<li><code>LOLOL</code> - Push LED buffer</li>
+<li><code>WINK &lt;value&gt;</code> - Set the EYE LED to a value (0-255).</li>
+</ul>
+<pre><code>  BTW Cycle all LEDs by hue
+  IM IN YR loop UPPIN YR i TIL BOTH SAEM i AN 255
+    I HAS A rgb ITZ HSSSVEE2BLINKY i 255 255
+    BLINKIES rgb
+    VISIBLE i
+    LOLOL
+
+    PAWS 50
+  IM OUTTA YR loop
+</code></pre>
+
+<h1 id="bling">Bling!</h1>
+<p><img alt="" src="https://media.giphy.com/media/122ieBYC3AcECI/giphy.gif" /></p>
+<p>Use <code>RICK ROLL WIT &lt;path&gt; &lt;pattern&gt; &lt;loop&gt;</code> to play raw files. Note: this bypasses the screen buffer and is streamed directly to the screen to get maximum FPS. Any other drawing operations will have odd side effects.</p>
+<ul>
+<li><code>&lt;path&gt;</code> - Path to to raw file to play</li>
+<li><code>&lt;pattern&gt;</code> - Integer value for LED pattern to run along with bling</li>
+<li><code>&lt;loop&gt;</code> - <code>WIN</code> to loop. <code>FAIL</code> to play once. Looping allows the user to quit with the <em>LEFT</em> button. If looping is disabled, user input is ignored and it will quit at the end of the animation.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>value</th>
+<th>LED Pattern Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>None</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Hue cycle</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Polar (accelerometer)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sparkle</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Double Sweep</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Flames</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Bouncing</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Chasing Red</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Chasing Green</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Chasing Blue</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Chasing Yellow</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Kitt</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Rainbow</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Roller Coaster Red</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Roller Coaster Green</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Roller Coaster Blue</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Roller Coaster Yellow</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Red, Green, Blue, Yellow sweep</td>
+</tr>
+</tbody>
+</table>
+<p>These are also defined in led_patterns.lol</p>
+<p>Example:</p>
+<pre><code>BTW Play rick roll with roller coaster yellow LED pattern once
+RICK ROLL WIT &quot;/sdcard/bling/rick.raw&quot; led_pattern_roller_coaster_yellow FAIL
+</code></pre>
+
+<h1 id="buttons">Buttons</h1>
+<p><img alt="" src="https://media.giphy.com/media/f52fAJnhEsxMs/giphy.gif" /></p>
+<p>There are 7 buttons available on the badge. The automatic screen inversion properly flips the buttons as well. U, D, L, R buttons are left of the screen. A and B buttons are below the screen. And the action button is to the right of the screen.</p>
+<p>Button state is managed as a single 8-bit value with bitmasks for each button. The mask is not automatically cleared in all cases.</p>
+<ul>
+<li><code>KITTEH</code> - Get the current button state (bitmask)</li>
+<li><code>BAD KITTEH</code> - Clear button state </li>
+<li><code>POUNCE</code> - Block the badge until a button is pressed. <strong>Note:</strong> This may return early if there was a timeout waiting. Check the button value with <code>KITTEH</code> to ensure something was actually pressed and a timeout did not occur.</li>
+<li><code>WHATSUP</code> - Is up pressed?</li>
+<li><code>WHATSDOWN</code> - Is down pressed?</li>
+<li><code>ISLEFF</code> - Is left pressed?</li>
+<li><code>ISRIGHT</code> - Is right pressed?</li>
+<li><code>WATTA</code> - Is A pressed?</li>
+<li><code>WATTB</code> - Is B pressed?</li>
+<li><code>ISGO</code> - Is start pressed?</li>
+</ul>
+<h1 id="user-input">User Input</h1>
+<p><img alt="" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" /></p>
+<p>Due to performance issues, user input was written in C and wrapped in LULZCODE. Use the <code>MEOMIX</code> command to return a string from the user up to 8 characters. This function will block until the user returns.</p>
+<p>Format:</p>
+<p><code>MEOWMIX &lt;prompt&gt; &lt;Initial Value&gt; &lt;Max Length&gt;</code></p>
+<p>Example:</p>
+<pre><code>MEOMIX &quot;Name&quot; &quot;Bender&quot; 8
+</code></pre>
+
+<h1 id="badge-state">Badge State</h1>
+<p><img alt="" src="https://media.giphy.com/media/WXB88TeARFVvi/giphy.gif" /></p>
+<ul>
+<li><code>OHIMEMBER "&lt;key&gt;"</code> - Gets a value stored at "key"</li>
+<li><code>MEMBER "&lt;key&gt;" "&lt;value&gt;"</code> - Sets a value stored at key</li>
+</ul>
+<p>The following keys are available. Not all are writeable</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+<th>Read</th>
+<th>Write</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>Player name</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>botnet_points</td>
+<td>Defense rating</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>botnet_experience</td>
+<td>Experience</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>botnet_level</td>
+<td>Player level</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>botnet_name</td>
+<td>Name of botnet player is in</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>voltage</td>
+<td>Battery voltage</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>Screen / LED level</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr>
+<td>score_pong</td>
+<td>Current pong high score</td>
+<td>X</td>
+<td>-</td>
+</tr>
+<tr>
+<td>score_ski</td>
+<td>Current ski free high score</td>
+<td>X</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<h1 id="globals">Globals</h1>
+<p>Globals can be set and shared between LULZCODE contexts. Globals are <strong>not</strong> persisted and only stored as long as the badge has power.</p>
+<ul>
+<li><code>MAH "&lt;key&gt;" "&lt;value&gt;"</code> - Set a global</li>
+<li><code>TEH "&lt;key&gt;"</code> - Get a global value (if it exists)</li>
+</ul>
+<h1 id="constants">Constants</h1>
+<p><img alt="" src="https://media.giphy.com/media/xBAreNGk5DapO/giphy.gif" /></p>
+<ul>
+<li><code>VERSHUN</code> - returns a string containing current firmware version</li>
+<li><code>WHOAMI?</code> - returns integer of the unique serial number of the badge</li>
+</ul>
+<h1 id="random-values">Random values</h1>
+<p><code>CRAZY GO NUTS &lt;max&gt;</code> - Generate a random value between &gt;= 0 and &lt; max.</p>
+<h1 id="accelerometer">Accelerometer</h1>
+<p><img alt="" src="https://media.giphy.com/media/uTCAwWNtz7U2c/giphy.gif" /></p>
+<ul>
+<li><code>SIDEWAYZ</code> - Get accelerometer X value that is side to side relative to body. </li>
+<li><code>UPWAYZ</code> - Get accelerometer Y value that is up / down relative to body. </li>
+<li><code>OUTWAYZ</code> - Get accelerometer Z value that is outward from body. </li>
+<li><code>TILTZ</code> - Get angle of X/Y values with 0 degrees being the user's head and 180 degrees being the user's feet. 90/270s degrees are tilting right and left. </li>
+</ul>
+<h1 id="i2c">I2C</h1>
+<p><img alt="" src="https://media.giphy.com/media/aOqVDcqUQt1BK/giphy.gif" /></p>
+<p><strong>Note</strong> 7-bit addresses are used and will be shifted by one and R/W bit set per the standard. If your I2C slave is non-standard tough luck. </p>
+<ul>
+<li><code>NOMS &lt;7-bit address&gt; &lt;register&gt; &lt;byte&gt;</code> Write a byte to a register</li>
+<li><code>NOMS &lt;7-bit address&gt; &lt;byte&gt;</code> Write a byte to an address</li>
+<li><code>NOM &lt;7-bit address&gt; &lt;register&gt;</code> Read a single byte from a register</li>
+</ul>
+<h1 id="system-calls">System Calls</h1>
+<p><img alt="" src="https://media.giphy.com/media/ABWZij8BUNS1i/giphy.gif" /></p>
+<p>Specific functions in the badge have been exposed as system calls. </p>
+<ul>
+<li><code>SYSTUM "&lt;call&gt;"</code> - Make a system call</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>call</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ABOUT</td>
+<td>Show about screen</td>
+</tr>
+<tr>
+<td>ADDON_START</td>
+<td>Start the background addon task</td>
+</tr>
+<tr>
+<td>ADDON_STOP</td>
+<td>Stop the background addon task</td>
+</tr>
+<tr>
+<td>INTERRUPTS_ON</td>
+<td>Allow UI interruptions</td>
+</tr>
+<tr>
+<td>INTERRUPTS_OFF</td>
+<td>Do not allow UI interruptions</td>
+</tr>
+<tr>
+<td>BOTNET</td>
+<td>Run botnet UI</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Pick name</td>
+</tr>
+<tr>
+<td>SHOUTS</td>
+<td>Show shouts screen</td>
+</tr>
+<tr>
+<td>SKI</td>
+<td>Run ski free game</td>
+</tr>
+<tr>
+<td>STATE_RESET</td>
+<td>Factor reset badge state</td>
+</tr>
+<tr>
+<td>TILT_ON</td>
+<td>Enable screen tilt</td>
+</tr>
+<tr>
+<td>TILT_OFF</td>
+<td>Disable screen tilt</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>Show current time GUI</td>
+</tr>
+</tbody>
+</table>
+<h1 id="peers">Peers</h1>
+<ul>
+<li><code>BADGEZ?</code> - Get a BUKKIT of current peers</li>
+</ul>
+<h1 id="time">Time</h1>
+<ul>
+<li><code>TIX</code> - Get the current time in milliseconds</li>
+<li><code>PAWS &lt;ms&gt;</code> - Delay execution for x milliseconds</li>
+</ul>
+<h1 id="files">Files</h1>
+<p><img alt="" src="https://media.giphy.com/media/X3WNcenXkEOMU/giphy.gif" /></p>
+<ul>
+<li><code>DAB "&lt;path&gt;"</code> - Get a BUKKIT of file paths in a given path</li>
+</ul>
+<p><em>See chip8.lulz for an example</em></p>
+<h1 id="chip-8">CHIP-8</h1>
+<ul>
+<li><code>NACHOS "&lt;path&gt;"</code> - Run a CHIP-8 or Super CHIP-8</li>
+</ul>
+<h1 id="unlocks">Unlocks</h1>
+<ul>
+<li><code>CHEEZBURGER "&lt;code&gt;"</code> - Validate an unlock code</li>
+<li><code>L33T</code> - Get the unlock state as an integer, unlock values are stored as a bitmask</li>
+</ul>
+<h1 id="token-reference">Token Reference</h1>
+<p><img alt="" src="https://media.giphy.com/media/G3773sSDJHHy0/giphy.gif" /></p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ALL</code></td>
+<td>Fill screen with a color</td>
+</tr>
+<tr>
+<td><code>BAD KITTEH</code></td>
+<td>Clear button state</td>
+</tr>
+<tr>
+<td><code>BADGEZ?</code></td>
+<td>Get peer badges</td>
+</tr>
+<tr>
+<td><code>BLINK</code></td>
+<td>Set single LED</td>
+</tr>
+<tr>
+<td><code>BLINKIES</code></td>
+<td>Set all LEDs</td>
+</tr>
+<tr>
+<td><code>BOX</code></td>
+<td>Draw a Rectangle</td>
+</tr>
+<tr>
+<td><code>CATINABOX</code></td>
+<td>Draw a filled rectangle</td>
+</tr>
+<tr>
+<td><code>CATINAROUND</code></td>
+<td>Circle, filled</td>
+</tr>
+<tr>
+<td><code>CHEEZBURGER</code></td>
+<td>Validate Unlock</td>
+</tr>
+<tr>
+<td><code>CRAYON</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>CRAZY GO NUTS</code></td>
+<td>Random number</td>
+</tr>
+<tr>
+<td><code>CUT</code></td>
+<td>String char at index</td>
+</tr>
+<tr>
+<td><code>DAB</code></td>
+<td>List of files in a directory</td>
+</tr>
+<tr>
+<td><code>DOT</code></td>
+<td>Draw Pixel</td>
+</tr>
+<tr>
+<td><code>FREND</code></td>
+<td>Include another LULZCODE file</td>
+</tr>
+<tr>
+<td><code>GNAW</code></td>
+<td>Substring</td>
+</tr>
+<tr>
+<td><code>HOW BIG</code></td>
+<td>Calculate text height */</td>
+</tr>
+<tr>
+<td><code>HOW MANY IN</code></td>
+<td>Count BUKKIT items</td>
+</tr>
+<tr>
+<td><code>HOW SPREAD</code></td>
+<td>Calculate text width</td>
+</tr>
+<tr>
+<td><code>HOW TALL</code></td>
+<td>LCD Height</td>
+</tr>
+<tr>
+<td><code>HOW WIDE</code></td>
+<td>LCD Width</td>
+</tr>
+<tr>
+<td><code>HSSSVEE2</code></td>
+<td>HSV to 565</td>
+</tr>
+<tr>
+<td><code>HSSSVEE2BLINKY</code></td>
+<td>HSV to RGB</td>
+</tr>
+<tr>
+<td><code>INSIDEZ</code></td>
+<td>Set the Cursor Area</td>
+</tr>
+<tr>
+<td><code>ISGO</code></td>
+<td>Is start pressed?</td>
+</tr>
+<tr>
+<td><code>ISLEFF</code></td>
+<td>Is left pressed?</td>
+</tr>
+<tr>
+<td><code>ISRIGHT</code></td>
+<td>Is right pressed?</td>
+</tr>
+<tr>
+<td><code>KATNIP</code></td>
+<td>Draw bitmap (raw file)</td>
+</tr>
+<tr>
+<td><code>KITTEH</code></td>
+<td>Button state</td>
+</tr>
+<tr>
+<td><code>KOUNT</code></td>
+<td>String length</td>
+</tr>
+<tr>
+<td><code>L33T</code></td>
+<td>Get unlock state</td>
+</tr>
+<tr>
+<td><code>LAZER</code></td>
+<td>Move the cursor</td>
+</tr>
+<tr>
+<td><code>LETR</code></td>
+<td>Char type</td>
+</tr>
+<tr>
+<td><code>LOLOL</code></td>
+<td>Push LED buffer</td>
+</tr>
+<tr>
+<td><code>LOLOLOL</code></td>
+<td>Push screen buffer</td>
+</tr>
+<tr>
+<td><code>MAH</code></td>
+<td>Global Set</td>
+</tr>
+<tr>
+<td><code>MEMBER</code></td>
+<td>Store a setting value</td>
+</tr>
+<tr>
+<td><code>MEOW</code></td>
+<td>Print</td>
+</tr>
+<tr>
+<td><code>MEOWMIX</code></td>
+<td>Get user input</td>
+</tr>
+<tr>
+<td><code>NACHOS</code></td>
+<td>Run CHIP8 File</td>
+</tr>
+<tr>
+<td><code>NOM</code></td>
+<td>I2C read byte</td>
+</tr>
+<tr>
+<td><code>NOMS</code></td>
+<td>I2C write byte</td>
+</tr>
+<tr>
+<td><code>OHIMEMBER</code></td>
+<td>Get a setting value</td>
+</tr>
+<tr>
+<td><code>OUTWAYZ</code></td>
+<td>Accelerometer Y value</td>
+</tr>
+<tr>
+<td><code>PAWS</code></td>
+<td>Delay</td>
+</tr>
+<tr>
+<td><code>POUNCE</code></td>
+<td>Wait for button</td>
+</tr>
+<tr>
+<td><code>RICK ROLL WIT</code></td>
+<td>Play Bling</td>
+</tr>
+<tr>
+<td><code>ROUND</code></td>
+<td>Circle, empty</td>
+</tr>
+<tr>
+<td><code>ROYGEEBIF2</code></td>
+<td>RGB to 565</td>
+</tr>
+<tr>
+<td><code>SHOUT</code></td>
+<td>Set font size</td>
+</tr>
+<tr>
+<td><code>SIDEWAYZ</code></td>
+<td>Accelerometer X value</td>
+</tr>
+<tr>
+<td><code>STRAIGHT</code></td>
+<td>Draw a Line</td>
+</tr>
+<tr>
+<td><code>SYSTUM</code></td>
+<td>System call</td>
+</tr>
+<tr>
+<td><code>TEH</code></td>
+<td>Global Get</td>
+</tr>
+<tr>
+<td><code>TILTZ</code></td>
+<td>Get current angle in degree of X/Y axis</td>
+</tr>
+<tr>
+<td><code>TIX</code></td>
+<td>Get time millis</td>
+</tr>
+<tr>
+<td><code>TROLL</code></td>
+<td>Run file</td>
+</tr>
+<tr>
+<td><code>UPWAYZ</code></td>
+<td>Accelerometer Z value</td>
+</tr>
+<tr>
+<td><code>VERSHUN</code></td>
+<td>Current firmware version</td>
+</tr>
+<tr>
+<td><code>WATTA</code></td>
+<td>Is A pressed?</td>
+</tr>
+<tr>
+<td><code>WATTB</code></td>
+<td>Is B pressed?</td>
+</tr>
+<tr>
+<td><code>WHATSDOWN</code></td>
+<td>Is down pressed?</td>
+</tr>
+<tr>
+<td><code>WHATSUP</code></td>
+<td>Is up pressed?</td>
+</tr>
+<tr>
+<td><code>WHOAMI?</code></td>
+<td>Get unique id</td>
+</tr>
+<tr>
+<td><code>WINK</code></td>
+<td>Eye led</td>
+</tr>
+<tr>
+<td><code>YO</code></td>
+<td>String set char at index</td>
+</tr>
+</tbody>
+</table></div>
+                </div>
+        </div>
+
+    <hr>
+    <footer class="container">
+        
+        <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> and <a href="http://kristopolous.github.io/BOOTSTRA.386/">BOOTSTRA.386</a>.</center>
+    </footer>
+        <script src="../search/require.js"></script>
+        <script src="../search/search.js"></script>
+    </body>
+</html>

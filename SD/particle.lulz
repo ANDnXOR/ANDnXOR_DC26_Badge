@@ -1,0 +1,82 @@
+HAI 2600
+  OBTW
+  Particle physics demo inspired by The Hackaday Super Conference 2017 badge
+  Simplified because LULZCODE is orders of magnitude SLOWER than C
+  TLDR
+
+  FREND "/sdcard/include.lulz"
+
+  I HAS A gravity_norm ITZ 800
+  I HAS A gravity_float ITZ 50
+  I HAS A gravity ITZ gravity_norm
+  I HAS A min_mass ITZ 64
+  I HAS A max_mass ITZ 255
+  I HAS A n_parts ITZ 20
+  I HAS A pix_size ITZ 4
+  I HAS A max_x ITZ DIFF OF HOW WIDE AN pix_size
+  I HAS A max_y ITZ DIFF OF HOW TALL AN pix_size
+  I HAS A p ITZ A BUKKIT
+
+  BTW generate particles
+  IM IN YR loop UPPIN YR i TIL BOTH SAEM i AN n_parts
+    p HAS A SRS i ITZ A BUKKIT
+    p'Z SRS i HAS A x ITZ CRAZY GO NUTS HOW WIDE
+    p'Z SRS i HAS A y ITZ CRAZY GO NUTS HOW TALL
+    p'Z SRS i HAS A vx ITZ 0
+    p'Z SRS i HAS A vy ITZ 0
+    p'Z SRS i HAS A mass ITZ SUM OF CRAZY GO NUTS DIFF OF max_mass AN min_mass AN min_mass
+    p'Z SRS i HAS A color ITZ HSSSVEE2 CRAZY GO NUTS 255 255 255
+  IM OUTTA YR loop
+
+  HOW IZ I draw_particles
+    ALL DARK
+    IM IN YR loop UPPIN YR i TIL BOTH SAEM i AN n_parts
+      I HAS A pp ITZ p'Z SRS i
+      CATINABOX pp'Z x pp'Z y pix_size pix_size pp'Z color
+    IM OUTTA YR loop
+
+    I HAS A xforce ITZ DIFF OF 0 AN SIDEWAYZ
+    I HAS A yforce ITZ DIFF OF 0 AN UPWAYZ
+    BTW STRAIGHT 110 88 SUM OF 110 AN xforce SUM OF 88 AN yforce LIGHT
+    LOLOLOL
+  IF U SAY SO
+
+  HOW IZ I tick_particles
+    I HAS A xforce ITZ QUOSHUNT OF DIFF OF 0 AN SIDEWAYZ AN 4
+    I HAS A yforce ITZ QUOSHUNT OF DIFF OF 0 AN UPWAYZ AN 4
+    IM IN YR loop UPPIN YR i TIL BOTH SAEM i AN n_parts
+      I HAS A pp ITZ p'Z SRS i
+      I HAS A vx ITZ SUM OF pp'Z vx AN PRODUKT OF PRODUKT OF xforce AN gravity AN pp'Z mass
+      vx R QUOSHUNT OF vx AN 65535
+      I HAS A vy ITZ SUM OF pp'Z vx AN PRODUKT OF PRODUKT OF yforce AN gravity AN pp'Z mass
+      vy R QUOSHUNT OF vy AN 65535
+      I HAS A x ITZ SUM OF pp'Z x AN vx
+      I HAS A y ITZ SUM OF pp'Z y AN vy
+
+      DIFFRINT x AN BIGGR OF x AN 0, O RLY?, YA RLY, x R 0, OIC
+      DIFFRINT y AN BIGGR OF y AN 0, O RLY?, YA RLY, y R 0, OIC
+      DIFFRINT x AN SMALLR OF x AN max_x, O RLY?, YA RLY, x R max_x, OIC
+      DIFFRINT y AN SMALLR OF y AN max_y, O RLY?, YA RLY, y R max_y, OIC
+
+      BTW update position and velocity if nothing in the way
+      pp'Z x R x
+      pp'Z y R y
+      pp'Z vx R vx
+      pp'Z vy R vy
+
+    IM OUTTA YR loop
+  IF U SAY SO
+
+  ALL DARK
+  SYSTUM "TILT_OFF"
+  IM IN YR loop
+    I IZ tick_particles MKAY
+    I IZ draw_particles MKAY
+
+    ISLEFF, O RLY?, YA RLY
+      BAD KITTEH
+      GTFO
+    OIC
+  IM OUTTA YR loop
+  SYSTUM "TILT_ON"
+KTHXBYE

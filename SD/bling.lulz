@@ -1,0 +1,231 @@
+HAI 2600
+  FREND "/sdcard/include.lulz"
+  FREND "/sdcard/title_bar.lulz"
+  FREND "/sdcard/menu.lulz"
+  FREND "/sdcard/led_patterns.lulz"
+
+  HOW IZ I do_multi_bling YR count AN YR base_path AN YR bling
+    I HAS A index ITZ 0
+    I HAS A path ITZ base_path
+    IM IN YR loop
+      path R SMOOSH base_path AN SUM OF index AN 1 AN ".raw" MKAY
+      RICK ROLL WIT path bling WIN
+
+      WATTA, O RLY?, YA RLY
+        index R DIFF OF index AN 1
+        BTW wrap around
+        DIFFRINT index AN BIGGR OF index AN 0, O RLY?, YA RLY, index R DIFF OF count AN 1, OIC
+      OIC
+      WATTB, O RLY?, YA RLY
+        index R SUM OF index AN 1
+        BTW wrap around
+        DIFFRINT index AN SMALLR OF index AN DIFF OF count AN 1, O RLY?, YA RLY, index R 0, OIC
+      OIC
+      ISLEFF, O RLY?, YA RLY
+        BAD KITTEH
+        GTFO
+      OIC
+
+      BTW Debounce
+      BAD KITTEH
+      PAWS 100
+    IM OUTTA YR loop
+  IF U SAY SO
+
+  HOW IZ I ae_goon YR d
+    RICK ROLL WIT "/sdcard/bling/aegoon.raw" led_pattern_roller_coaster_red WIN
+  IF U SAY SO
+
+  HOW IZ I rick_roll YR d
+    RICK ROLL WIT "/sdcard/bling/rick.raw" led_pattern_polar WIN
+  IF U SAY SO
+
+  HOW IZ I hypnotoad YR d
+    RICK ROLL WIT "/sdcard/bling/hypnotoad1.raw" led_pattern_triple_sweep WIN
+  IF U SAY SO
+
+  HOW IZ I hawking YR data
+    I IZ do_multi_bling YR 4 AN YR "/sdcard/bling/hawking" AN YR led_pattern_triple_sweep MKAY
+  IF U SAY SO
+
+  HOW IZ I badgers YR d
+    RICK ROLL WIT "/sdcard/bling/badgers.raw" led_pattern_double_sweep WIN
+  IF U SAY SO
+
+  HOW IZ I bagel YR data
+    I IZ do_multi_bling YR 2 AN YR "/sdcard/bling/bagel" AN YR led_pattern_sparkle MKAY
+  IF U SAY SO
+
+  HOW IZ I carlton YR d
+    RICK ROLL WIT "/sdcard/bling/carlton.raw" led_pattern_chasing_red WIN
+  IF U SAY SO
+
+  HOW IZ I cyber_punk YR d
+    I IZ do_multi_bling YR 7 AN YR "/sdcard/bling/cyberpunk" AN YR led_pattern_kitt MKAY
+  IF U SAY SO
+
+  HOW IZ I damon YR data
+    I IZ do_multi_bling YR 13 AN YR "/sdcard/bling/mattdamon" AN YR led_pattern_bouncing MKAY
+  IF U SAY SO
+
+  HOW IZ I earth YR d
+    I HAS A index ITZ 0
+    RICK ROLL WIT "/sdcard/bling/earth.raw" led_pattern_rainbow WIN
+  IF U SAY SO
+
+  HOW IZ I emoji YR d
+    RICK ROLL WIT "/sdcard/bling/emoji1.raw" led_pattern_roller_coaster_yellow WIN
+    BLINKIES 0 0 0
+    LOLOL
+  IF U SAY SO
+
+  HOW IZ I lines YR d
+    RICK ROLL WIT "/sdcard/bling/lines.raw" led_pattern_kitt WIN
+  IF U SAY SO
+
+
+  HOW IZ I owl YR d
+    I IZ do_multi_bling YR 3 AN YR "/sdcard/bling/owl" AN YR led_pattern_hue MKAY
+  IF U SAY SO
+
+  HOW IZ I parallax YR d
+    I IZ do_multi_bling YR 3 AN YR "/sdcard/bling/parallax" AN YR led_pattern_bouncing MKAY
+  IF U SAY SO
+
+  HOW IZ I rick_and_morty YR d
+    I IZ do_multi_bling YR 13 AN YR "/sdcard/bling/rm" AN YR led_pattern_roller_coaster_green MKAY
+  IF U SAY SO
+
+  HOW IZ I roulette YR data
+    I HAS A bling_list ITZ DAB "/sdcard/random"
+    I HAS A index ITZ CRAZY GO NUTS HOW MANY IN bling_list
+    I HAS A led_pattern ITZ CRAZY GO NUTS led_pattern_count
+
+    RICK ROLL WIT bling_list'Z SRS index led_pattern WIN
+  IF U SAY SO
+
+  HOW IZ I scroll YR data
+    I HAS A text ITZ SMOOSH "DEFCON 26 " AN OHIMEMBER "name" MKAY
+    I HAS A w ITZ PRODUKT OF KOUNT text AN 55
+    I HAS A min_x ITZ DIFF OF 0 AN w
+    I HAS A h ITZ 0
+    I HAS A x ITZ HOW WIDE
+    SHOUT "LUDICROUS"
+    SHOUT "NO RAP"
+
+    IM IN YR loop
+      CRAYON HSSSVEE2 h 255 255
+      ALL DARK
+      LAZER x 0
+      MEOW text
+      LOLOLOL
+
+      x R DIFF OF x AN 5
+      h R SUM OF h AN 1
+
+      BTW wrap around
+      DIFFRINT x AN BIGGR OF x AN min_x, O RLY?, YA RLY,
+        x R HOW WIDE
+      OIC
+      BTW wrap hue around
+    BOTH SAEM h AN 255, O RLY?, YA RLY, h R 0, OIC
+      BTW allow user to quit
+      KITTEH, O RLY?, YA RLY, GTFO, OIC
+    IM OUTTA YR loop
+    POUNCE
+
+    SHOUT "RAP"
+  IF U SAY SO
+
+  HOW IZ I sloth YR data
+    I IZ do_multi_bling YR 9 AN YR "/sdcard/bling/sloth" AN YR led_pattern_roller_coaster_green MKAY
+  IF U SAY SO
+
+  HOW IZ I squares YR data
+    I IZ do_multi_bling YR 6 AN YR "/sdcard/bling/squares" AN YR led_pattern_chasing_yellow MKAY
+  IF U SAY SO
+
+  HOW IZ I telephreak YR d
+    RICK ROLL WIT "/sdcard/bling/telephreak.raw" led_pattern_hue WIN
+  IF U SAY SO
+
+  HOW IZ I trevor YR d
+    RICK ROLL WIT "/sdcard/bling/trevor.raw" led_pattern_hue WIN
+  IF U SAY SO
+
+  HOW IZ I trippy YR data
+    I IZ do_multi_bling YR 5 AN YR "/sdcard/bling/trippy" AN YR led_pattern_sparkle MKAY
+  IF U SAY SO
+
+  HOW IZ I twitter YR data
+    RICK ROLL WIT "/sdcard/gfx/twitter.raw" led_pattern_roller_coaster_blue WIN
+    BLINKIES 0 0 0
+    LOLOL
+  IF U SAY SO
+
+  HOW IZ I western YR data
+    I IZ do_multi_bling YR 8 AN YR "/sdcard/bling/western" AN YR led_pattern_flames MKAY
+  IF U SAY SO
+
+  HOW IZ I bling_menu
+    BTW Initialize the menu
+    I HAS A menu ITZ A BUKKIT
+    I IZ create_menu YR menu MKAY
+    I IZ add_item_to_menu YR menu AN YR "Roulette" AN YR roulette AN YR "/sdcard/bg/and!xor.raw" AN YR WIN MKAY
+    I IZ add_item_to_menu YR menu AN YR "Western" AN YR western AN YR "/sdcard/bling/western1.preview" AN YR WIN MKAY
+    I IZ add_item_to_menu YR menu AN YR "Rick Roll" AN YR rick_roll AN YR "/sdcard/bling/rick.preview" AN YR WIN MKAY
+    I IZ add_item_to_menu YR menu AN YR "Hypnotoad" AN YR hypnotoad AN YR "/sdcard/bling/hypnotoad1.preview" AN YR WIN MKAY
+    I IZ add_item_to_menu YR menu AN YR "Hawking" AN YR hawking AN YR "/sdcard/bling/hawking4.preview" AN YR WIN MKAY
+    BOTH SAEM MOD OF QUOSHUNT OF L33T AN 2048 AN 2 AN 1, O RLY?, YA RLY
+      I IZ add_item_to_menu YR menu AN YR "Trevor Forget" AN YR trevor AN YR "/sdcard/bling/trevor.preview" AN YR WIN MKAY
+    OIC
+    BOTH SAEM MOD OF QUOSHUNT OF L33T AN 4096 AN 2 AN 1, O RLY?, YA RLY
+      I IZ add_item_to_menu YR menu AN YR "Telephreak" AN YR telephreak AN YR "/sdcard/bling/telephreak.preview" AN YR WIN MKAY
+    OIC
+    I IZ add_item_to_menu YR menu AN YR "Matt Damon" AN YR damon AN YR "/sdcard/bling/mattdamon2.preview" AN YR WIN MKAY
+    I IZ add_item_to_menu YR menu AN YR "Twitter" AN YR twitter AN YR "/sdcard/gfx/twitter.raw" AN YR WIN MKAY
+    I IZ add_item_to_menu YR menu AN YR "Carlton" AN YR carlton AN YR "/sdcard/bling/carlton.preview" AN YR WIN MKAY
+    I IZ add_item_to_menu YR menu AN YR "Earth" AN YR earth AN YR "/sdcard/bling/earth.preview" AN YR WIN MKAY
+    I IZ add_item_to_menu YR menu AN YR "Emoji" AN YR emoji AN YR "/sdcard/bling/emoji1.preview" AN YR WIN MKAY
+    I IZ add_item_to_menu YR menu AN YR "Lines" AN YR lines AN YR "/sdcard/bling/lines.preview" AN YR WIN MKAY
+    I IZ add_item_to_menu YR menu AN YR "Scroll" AN YR scroll AN YR "/sdcard/bg/and!xor.raw" AN YR WIN MKAY
+    BOTH SAEM MOD OF QUOSHUNT OF L33T AN 1024 AN 2 AN 1, O RLY?, YA RLY
+      I IZ add_item_to_menu YR menu AN YR "Owls" AN YR owl AN YR "/sdcard/bling/owl1.preview" AN YR WIN MKAY
+    OIC
+    I IZ add_item_to_menu YR menu AN YR "Parallax" AN YR parallax AN YR "/sdcard/bling/parallax1.preview" AN YR WIN MKAY
+    BOTH SAEM MOD OF QUOSHUNT OF L33T AN 256 AN 2 AN 1, O RLY?, YA RLY
+      I IZ add_item_to_menu YR menu AN YR "Rick & Morty" AN YR rick_and_morty AN YR "/sdcard/bling/rm1.preview" AN YR WIN MKAY
+    OIC
+    I IZ add_item_to_menu YR menu AN YR "Sloth" AN YR sloth AN YR "/sdcard/bling/sloth1.preview" AN YR WIN MKAY
+    I IZ add_item_to_menu YR menu AN YR "Squares" AN YR squares AN YR "/sdcard/bling/squares1.preview" AN YR WIN MKAY
+    BOTH SAEM MOD OF QUOSHUNT OF L33T AN 32768 AN 2 AN 1, O RLY?, YA RLY
+      I IZ add_item_to_menu YR menu AN YR "Cyber Punk" AN YR cyber_punk AN YR "/sdcard/bling/cyberpunk1.preview" AN YR WIN MKAY
+    OIC
+    BOTH SAEM MOD OF QUOSHUNT OF L33T AN 512 AN 2 AN 1, O RLY?, YA RLY
+      I IZ add_item_to_menu YR menu AN YR "Trippy" AN YR trippy AN YR "/sdcard/bling/trippy1.preview" AN YR WIN MKAY
+    OIC
+    BOTH SAEM MOD OF QUOSHUNT OF L33T AN 32 AN 2 AN 1, O RLY?, YA RLY
+      I IZ add_item_to_menu YR menu AN YR "Badgers" AN YR badgers AN YR "/sdcard/bling/badgers.preview" AN YR WIN MKAY
+    OIC
+    BOTH SAEM MOD OF QUOSHUNT OF L33T AN 16 AN 2 AN 1, O RLY?, YA RLY
+      I IZ add_item_to_menu YR menu AN YR "A&E Goon" AN YR ae_goon AN YR "/sdcard/bling/aegoon.preview" AN YR WIN MKAY
+    OIC
+    BOTH SAEM MOD OF QUOSHUNT OF L33T AN 8 AN 2 AN 1, O RLY?, YA RLY
+      I IZ add_item_to_menu YR menu AN YR "Bagel" AN YR bagel AN YR "/sdcard/bling/bagel2.preview" AN YR WIN MKAY
+    OIC
+
+    BTW Clear all LEDs
+    BLINKIES 0 0 0
+    LOLOL
+
+    BTW Show the menu
+    I IZ do_menu YR menu MKAY
+
+    BTW Clear all LEDs
+    BLINKIES 0 0 0
+    LOLOL
+  IF U SAY SO
+
+  I IZ bling_menu MKAY
+
+KTHXBYE

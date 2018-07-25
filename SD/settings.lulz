@@ -1,0 +1,69 @@
+HAI 2600
+  FREND "/sdcard/include.lulz"
+  FREND "/sdcard/list.lulz"
+  FREND "/sdcard/menu.lulz"
+  FREND "/sdcard/popup.lulz"
+  FREND "/sdcard/title_bar.lulz"
+
+  HOW IZ I brightness YR data
+    I HAS A list ITZ A BUKKIT
+    list HAS A title ITZ "Brightness"
+    list HAS A count ITZ 5
+    list HAS A top ITZ 0
+    list HAS A selected ITZ 0
+    list HAS A items ITZ A BUKKIT
+
+    list'Z items HAS A SRS 0 ITZ "1"
+    list'Z items HAS A SRS 1 ITZ "2"
+    list'Z items HAS A SRS 2 ITZ "3"
+    list'Z items HAS A SRS 3 ITZ "4"
+    list'Z items HAS A SRS 4 ITZ "5"
+
+    I IZ do_list YR list MKAY, O RLY?
+      YA RLY
+        MEMBER "brightness" list'Z items'Z SRS list'Z selected
+    OIC
+  IF U SAY SO
+
+  HOW IZ I about YR data
+    SYSTUM "ABOUT"
+  IF U SAY SO
+
+  HOW IZ I reset YR data
+    I HAS A popup ITZ A BUKKIT
+    popup HAS A title ITZ "Factory Reset"
+    popup HAS A body ITZ "Are you sure you want to reset to factory settings?"
+    popup HAS A left ITZ "No"
+    popup HAS A right ITZ "Yes"
+    BOTH SAEM I IZ do_popup YR popup MKAY AN "Yes", O RLY?, YA RLY
+      SYSTUM "STATE_RESET"
+    OIC
+  IF U SAY SO
+
+  HOW IZ I name YR data
+    SYSTUM "NAME"
+  IF U SAY SO
+
+  HOW IZ I post YR data
+    SYSTUM "POST"
+  IF U SAY SO
+
+  HOW IZ I shouts YR data
+    SYSTUM "SHOUTS"
+  IF U SAY SO
+
+  HOW IZ I time YR data
+    SYSTUM "TIME"
+  IF U SAY SO
+
+  I HAS A menu ITZ A BUKKIT
+  I IZ create_menu YR menu MKAY
+  I IZ add_item_to_menu YR menu AN YR "Shouts" AN YR shouts AN YR "/sdcard/bg/and!xor.raw" AN YR WIN MKAY
+  I IZ add_item_to_menu YR menu AN YR "About" AN YR about AN YR "/sdcard/bg/and!xor.raw" AN YR WIN MKAY
+  I IZ add_item_to_menu YR menu AN YR "Brightness" AN YR brightness AN YR "/sdcard/bg/and!xor.raw" AN YR WIN MKAY
+  I IZ add_item_to_menu YR menu AN YR "Name" AN YR name AN YR "/sdcard/bg/and!xor.raw" AN YR WIN MKAY
+  I IZ add_item_to_menu YR menu AN YR "Time" AN YR time AN YR "/sdcard/bg/and!xor.raw" AN YR WIN MKAY
+  I IZ add_item_to_menu YR menu AN YR "Self Test" AN YR post AN YR "/sdcard/bg/and!xor.raw" AN YR WIN MKAY
+  I IZ add_item_to_menu YR menu AN YR "Factory Reset" AN YR reset AN YR "/sdcard/bg/and!xor.raw" AN YR WIN MKAY
+  I IZ do_menu YR menu MKAY
+KTHXBYE

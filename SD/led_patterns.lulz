@@ -1,0 +1,20 @@
+I HAS A led_pattern_none ITZ 0
+I HAS A led_pattern_hue ITZ 1
+I HAS A led_pattern_polar ITZ 2
+I HAS A led_pattern_sparkle ITZ 3
+I HAS A led_pattern_double_sweep ITZ 4
+I HAS A led_pattern_flames ITZ 5
+I HAS A led_pattern_bouncing ITZ 6
+I HAS A led_pattern_chasing_red ITZ 7
+I HAS A led_pattern_chasing_green ITZ 8
+I HAS A led_pattern_chasing_blue ITZ 9
+I HAS A led_pattern_chasing_yellow ITZ 10
+I HAS A led_pattern_kitt ITZ 11
+I HAS A led_pattern_rainbow ITZ 12
+I HAS A led_pattern_roller_coaster_red ITZ 13
+I HAS A led_pattern_roller_coaster_green ITZ 14
+I HAS A led_pattern_roller_coaster_blue ITZ 15
+I HAS A led_pattern_roller_coaster_yellow ITZ 16
+I HAS A led_pattern_triple_sweep ITZ 17
+
+I HAS A led_pattern_count ITZ 17

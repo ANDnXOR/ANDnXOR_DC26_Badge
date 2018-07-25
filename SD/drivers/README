@@ -1,0 +1,8 @@
+For convenience, drivers for the USB to Serial IC we used are contained here. In the event you do trust us, this will save you some time downloading drivers yourself.
+
+If you don't trust us, you shouldn't, download the CP2102N drivers from silabs.
+
+
+For Linux, drivers are included. Just need appropriate permissions on the /dev/tty* device and a udev rule. See: https://www.silabs.com/community/interface/knowledge-base.entry.html/2016/06/06/fixed_tty_deviceass-XzTf
+
+

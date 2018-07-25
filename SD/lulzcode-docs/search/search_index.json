@@ -1,0 +1,264 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Welcome to LULZCODE\n\n\nLULZCODE is designed to control nearly all aspects of the AND!XOR Indie badge for DEF CON 26. To accomplish this we needed to extend LOLCODE to meet our needs.\n\n\n \n\n\nHow is LULZCODE different?\n\n\nNearly all LOLCODE 1.2 features have been carried forward. We essentially doubled the language size to meet our needs. One important feature that was removed was Unicode as it required too much flash storage. We also make use of \nBUKKITs\n which are not fully supported in LOLCODE.\n\n\nWhat is LULZCODE for?\n\n\nAfter reading over the LOLCODE spec several times and fighting back the tears we realized it is likely turing-complete. It had everything we needed. Except it didn't work well on a microcontroller. In fact, it only had basic user input and output. For our badges we need a language that lets us control the low-level peripherals. So LULZCODE was born. An extension of LOLCODE to support microcontrollers.\n\n\nLimitations\n\n\nNot everything was exposed in LULZCODE. It turns out modifying a language is a \nLOT\n of work. Rather we took a more pragmatic approach and started writing our badge code in LOLCODE then extending the language wherever we needed it. \n\n\nLULZCODE memory usage is very high. In fact an average LULZCODE script can use up to 100KB of heap memory. That's 5 times what our first badge had for memory. For this reason we are running the badge on an ESP32-WROVER which gives us 4MB of external SPI RAM.\n\n\nLULZCODE is slow. Very slow. It's interpretting strings so load time takes awhile. Once the parse tree is in memory (see above) its performance is \nokay\n but not great.\n\n\nLOLCODE 1.2 Spec\n\n\nFor more on LOLCODE see: \nhttps://github.com/justinmeza/lolcode-spec/blob/master/v1.2/lolcode-spec-v1.2.md", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#welcome-to-lulzcode", 
+            "text": "LULZCODE is designed to control nearly all aspects of the AND!XOR Indie badge for DEF CON 26. To accomplish this we needed to extend LOLCODE to meet our needs.", 
+            "title": "Welcome to LULZCODE"
+        }, 
+        {
+            "location": "/#how-is-lulzcode-different", 
+            "text": "Nearly all LOLCODE 1.2 features have been carried forward. We essentially doubled the language size to meet our needs. One important feature that was removed was Unicode as it required too much flash storage. We also make use of  BUKKITs  which are not fully supported in LOLCODE.", 
+            "title": "How is LULZCODE different?"
+        }, 
+        {
+            "location": "/#what-is-lulzcode-for", 
+            "text": "After reading over the LOLCODE spec several times and fighting back the tears we realized it is likely turing-complete. It had everything we needed. Except it didn't work well on a microcontroller. In fact, it only had basic user input and output. For our badges we need a language that lets us control the low-level peripherals. So LULZCODE was born. An extension of LOLCODE to support microcontrollers.", 
+            "title": "What is LULZCODE for?"
+        }, 
+        {
+            "location": "/#limitations", 
+            "text": "Not everything was exposed in LULZCODE. It turns out modifying a language is a  LOT  of work. Rather we took a more pragmatic approach and started writing our badge code in LOLCODE then extending the language wherever we needed it.   LULZCODE memory usage is very high. In fact an average LULZCODE script can use up to 100KB of heap memory. That's 5 times what our first badge had for memory. For this reason we are running the badge on an ESP32-WROVER which gives us 4MB of external SPI RAM.  LULZCODE is slow. Very slow. It's interpretting strings so load time takes awhile. Once the parse tree is in memory (see above) its performance is  okay  but not great.", 
+            "title": "Limitations"
+        }, 
+        {
+            "location": "/#lolcode-12-spec", 
+            "text": "For more on LOLCODE see:  https://github.com/justinmeza/lolcode-spec/blob/master/v1.2/lolcode-spec-v1.2.md", 
+            "title": "LOLCODE 1.2 Spec"
+        }, 
+        {
+            "location": "/lulzcode/", 
+            "text": "LULZCODE\n\n\nThis page documents everything we added to LOLCODE to make LULZCODE.\n\n\n\n\nAPI\n\n\nLULZCODE implements API-level checking (as a warning). Current API-level is \n2600\n. All lulzcode files should start with \nHAI 2600\n and end with \nKTHXBYE\n\n\nFile extensions\n\n\nTo work with the atom extensions (code highlighting, completion, etc) LULZCODE files should end with \n.lulz\n extensions.\n\n\nFRENDs\n\n\n\n\nFor code maintainability and portability, \nFREND\n has been added to LULZCODE. It is functionally equivalent to \n#include\n in c. \nFREND\n can be included recursively. However, this is not recommended as the same file may be included multiple times. It is a best practice only to make \nFREND\ns at the top level LULZCODE file.\n\n\n\n\nFREND \"path\"\n\n\n\n\nTROLL\n\n\n\n\nTROLL \"\npath\n\"\n - Execute another LULZCODE file. The LULZCODE pipeline can be memory intensive and it is not recommended to do this recursively as a new LULZCODE context is established for each \nTROLL\n\n\n\n\nLETR\n\n\nOne type was added to LULZCODE: \nLETR\n in addition to \nYARN\n, \nNOOB\n, \nTROOF\n, etc.\n\n\nLETR\n is a single character (\nchar\n in C).\n\n\nExample, this does an ascii conversion:\n\n\nI HAS A var ITZ 65\nVISIBLE MAEK var A LETR\n\n\n\n\nYARN Manipulation\n\n\n\n\n\n\nKOUNT \"\nYARN\n\"\n: Calculates \nYARN\n length.\n\n\nGNAW \"\nYARN\n\" \nstart\n \nend\n: Substring of a \nYARN\n\n\nCUT \"\nYARN\n\" \nindex\n: Gets the ascii decimal value of a single \nLETR\n in a \nYARN\n\n\nYO \"\nYARN\n\" \nindex\n \"\nYARN\n\"\n: Overwrites part of a \nYARN\n\n\n\n\nExample:\n\n\nBTW Prints 11\nVISIBLE KOUNT \nHello World\n\n\nBTW Returns llo\nGNAW \nHello World\n 2 4\n\nBTW Returns 111\nVISIBLE CUT \nHello World\n 4 \n\nBTW Prints l\nVISIBLE MAEK CUT \nHello World\n 4 A LETR\n\nBTW Prints Hello Badge\nI HAS A text ITZ \nHello World!\n\ntext R YO text 6 \nBadge\n\n\n\n\n\nBUKKITS\n\n\n\n\nLULZCODE uses LOLCODE BUKKITs but extends slightly.\n\n\n\n\nHOW MANY IN \nBUKKIT\n - Counts the items in a BUKKIT\n\n\n\n\nColor\n\n\nColors are shared between LEDs and LCD. The LEDs use 32bit or discreet R, G, B values whereas the LCD uses 565 (16-bit) colors. These functions help with conversion between various colors.\n\n\n\n\nROYGEEBIFF2 \nr\n \ng\n \nb\n - Convert an RGB value to 565 color (for LCD) where \nr, g, b\n are 0 to 255\n\n\nHSSSVEE2 \nh\n \ns\n \nv\n - Convert discreet hue saturation and value to 565 color (for LCD) where \nh, s, v\n are 0 to 255\n\n\nHSSSVEE2BLINKY \nh\n \ns\n \nv\n - Convert discreet hue saturation and value to single 24-bit RGB value (for LEDs) where \nh, s, v\n are 0 to 255\n\n\n\n\nLCD Graphics\n\n\n\n\nThere are a couple constants available to help with graphics.\n\n\n\n\nHOW WIDE\n - returns integer containing width in pixels of the display\n\n\nHOW TALL\n - returns integer containing height in pixels of the display\n\n\n\n\nScreen buffer\n\n\nAll graphics commands like \nSHOUT\n and \nMEOW\n and \nSTRAIGHT\n draw to a screen buffer. The \nLOLOLOL\n command must be used to push the buffer to the screen.\n\n\nText\n\n\n\n\nCRAYON \ncolor\n - Set the current font color. Use \nROYGEEBIFF2\n to generate a 565 color.\n\n\nSHOUT \"\nvalue\n\"\n - Set the current font. Valid values:\nSMALL\n, \nMEDIUM\n, \nLARGE\n, \nLUDICROUS\n\n\nHOW SPREAD \"\nYARN\n\"\n - Measure text width of \nYARN\n using current font\n\n\nHOW BIG \"\nYARN\n\"\n - Measure text height of \nYARN\n using current font\n\n\nLAZER \nx\n \ny\n - Move the cursor to X, Y coordinates. \nNote: Cursor is moved relative to current font\n\n\nINSIDEZ \nx\n \ny\n \nwidth\n \nheight\n - Set the cursor area (for word wrapping and clipping purposes) \n\n\nMEOW \"\ntext\n\"\n - Print text to screen using current font at the current cursor location\n\n\n\n\nExample:\n\n\nBTW Set current font color to red\nCRAYON ROYGEEBIFF2 255 0 0\nBTW Use a large font\nSHOUT \nLARGE\n\nBTW Move cursor to origin\nLAZER 0 0\nBTW Print\nMEOW \nHello World\n\nBTW Push screen buffer\nLOLOLOL\n\n\n\n\nShapes\n\n\n\n\nALL \ncolor\n - Fill the screen with a color\n\n\nDOT \nx\n \ny\n \ncolor\n - Draw a single pixel with a color\n\n\nROUND \nx\n \ny\n \nradius\n \ncolor\n - Draw circle \n\n\nCATINAROUND \nx\n \ny\n \nradius\n \ncolor\n - filled circle\n\n\nBOX \nx\n \ny\n \nw\n \nh\n \ncolor\n - Draw a rectangle\n\n\nCATINABOX \nx\n \ny\n \nw\n \nh\n \ncolor\n - Draw a filled rectangle\n\n\nSTRAIGHT \nx1\n \ny1\n \nx2\n \ny2\n \ncolor\n - Draw a line between x1,y1 and x2,y2 with a color\n\n\n\n\nGraphics\n\n\n\n\nKATNIP \"\npath_to_file\n\" \nx\n \ny\n \nw\n \nh\n - Draw a raw file from SD card at x, y with width and height\n\n\n\n\nExample: \n\n\nBTW Draw an image at 0,0 with 100x100 dimensions then push the buffer\nKATNIP \n/sdcard/gfx/image.raw\n 0 0 100 100\nLOLOLOL\n\n\n\n\nLEDs\n\n\n\n\nLike the LCD, LEDs are buffered. After setting color values for LEDs, be sure to push the LED buffer with \nLOLOL\n.  \nNote:\n The Eye LED is not buffered.\n\n\n\n\nBLINK \nindex\n \ncolor\n - Set a single LED at index (0-30) to a 24-bit RGB value\n\n\nBLINK \nindex\n \nr\n \ng\n \nb\n - set a single LED at index (0-30) to discreet R G B values\n\n\nBLINKIES \ncolor\n - Set all LEDs to a 24-bit RGB value\n\n\nBLINKIES \nr\n \ng\n \nb\n - Set all LEDs to discreet R G B values\n\n\nLOLOL\n - Push LED buffer\n\n\nWINK \nvalue\n - Set the EYE LED to a value (0-255).\n\n\n\n\n  BTW Cycle all LEDs by hue\n  IM IN YR loop UPPIN YR i TIL BOTH SAEM i AN 255\n    I HAS A rgb ITZ HSSSVEE2BLINKY i 255 255\n    BLINKIES rgb\n    VISIBLE i\n    LOLOL\n\n    PAWS 50\n  IM OUTTA YR loop\n\n\n\n\nBling!\n\n\n\n\nUse \nRICK ROLL WIT \npath\n \npattern\n \nloop\n to play raw files. Note: this bypasses the screen buffer and is streamed directly to the screen to get maximum FPS. Any other drawing operations will have odd side effects.\n\n\n\n\npath\n - Path to to raw file to play\n\n\npattern\n - Integer value for LED pattern to run along with bling\n\n\nloop\n - \nWIN\n to loop. \nFAIL\n to play once. Looping allows the user to quit with the \nLEFT\n button. If looping is disabled, user input is ignored and it will quit at the end of the animation.\n\n\n\n\n\n\n\n\n\n\nvalue\n\n\nLED Pattern Description\n\n\n\n\n\n\n\n\n\n\n0\n\n\nNone\n\n\n\n\n\n\n1\n\n\nHue cycle\n\n\n\n\n\n\n2\n\n\nPolar (accelerometer)\n\n\n\n\n\n\n3\n\n\nSparkle\n\n\n\n\n\n\n4\n\n\nDouble Sweep\n\n\n\n\n\n\n5\n\n\nFlames\n\n\n\n\n\n\n6\n\n\nBouncing\n\n\n\n\n\n\n7\n\n\nChasing Red\n\n\n\n\n\n\n8\n\n\nChasing Green\n\n\n\n\n\n\n9\n\n\nChasing Blue\n\n\n\n\n\n\n10\n\n\nChasing Yellow\n\n\n\n\n\n\n11\n\n\nKitt\n\n\n\n\n\n\n12\n\n\nRainbow\n\n\n\n\n\n\n13\n\n\nRoller Coaster Red\n\n\n\n\n\n\n14\n\n\nRoller Coaster Green\n\n\n\n\n\n\n15\n\n\nRoller Coaster Blue\n\n\n\n\n\n\n16\n\n\nRoller Coaster Yellow\n\n\n\n\n\n\n17\n\n\nRed, Green, Blue, Yellow sweep\n\n\n\n\n\n\n\n\nThese are also defined in led_patterns.lol\n\n\nExample:\n\n\nBTW Play rick roll with roller coaster yellow LED pattern once\nRICK ROLL WIT \n/sdcard/bling/rick.raw\n led_pattern_roller_coaster_yellow FAIL\n\n\n\n\nButtons\n\n\n\n\nThere are 7 buttons available on the badge. The automatic screen inversion properly flips the buttons as well. U, D, L, R buttons are left of the screen. A and B buttons are below the screen. And the action button is to the right of the screen.\n\n\nButton state is managed as a single 8-bit value with bitmasks for each button. The mask is not automatically cleared in all cases.\n\n\n\n\nKITTEH\n - Get the current button state (bitmask)\n\n\nBAD KITTEH\n - Clear button state \n\n\nPOUNCE\n - Block the badge until a button is pressed. \nNote:\n This may return early if there was a timeout waiting. Check the button value with \nKITTEH\n to ensure something was actually pressed and a timeout did not occur.\n\n\nWHATSUP\n - Is up pressed?\n\n\nWHATSDOWN\n - Is down pressed?\n\n\nISLEFF\n - Is left pressed?\n\n\nISRIGHT\n - Is right pressed?\n\n\nWATTA\n - Is A pressed?\n\n\nWATTB\n - Is B pressed?\n\n\nISGO\n - Is start pressed?\n\n\n\n\nUser Input\n\n\n\n\nDue to performance issues, user input was written in C and wrapped in LULZCODE. Use the \nMEOMIX\n command to return a string from the user up to 8 characters. This function will block until the user returns.\n\n\nFormat:\n\n\nMEOWMIX \nprompt\n \nInitial Value\n \nMax Length\n\n\nExample:\n\n\nMEOMIX \nName\n \nBender\n 8\n\n\n\n\nBadge State\n\n\n\n\n\n\nOHIMEMBER \"\nkey\n\"\n - Gets a value stored at \"key\"\n\n\nMEMBER \"\nkey\n\" \"\nvalue\n\"\n - Sets a value stored at key\n\n\n\n\nThe following keys are available. Not all are writeable\n\n\n\n\n\n\n\n\nKey\n\n\nDescription\n\n\nRead\n\n\nWrite\n\n\n\n\n\n\n\n\n\n\nname\n\n\nPlayer name\n\n\nX\n\n\nX\n\n\n\n\n\n\nbotnet_points\n\n\nDefense rating\n\n\nX\n\n\n-\n\n\n\n\n\n\nbotnet_experience\n\n\nExperience\n\n\nX\n\n\n-\n\n\n\n\n\n\nbotnet_level\n\n\nPlayer level\n\n\nX\n\n\n-\n\n\n\n\n\n\nbotnet_name\n\n\nName of botnet player is in\n\n\nX\n\n\n-\n\n\n\n\n\n\nvoltage\n\n\nBattery voltage\n\n\nX\n\n\n-\n\n\n\n\n\n\nbrightness\n\n\nScreen / LED level\n\n\nX\n\n\nX\n\n\n\n\n\n\nscore_pong\n\n\nCurrent pong high score\n\n\nX\n\n\n-\n\n\n\n\n\n\nscore_ski\n\n\nCurrent ski free high score\n\n\nX\n\n\nX\n\n\n\n\n\n\n\n\nGlobals\n\n\nGlobals can be set and shared between LULZCODE contexts. Globals are \nnot\n persisted and only stored as long as the badge has power.\n\n\n\n\nMAH \"\nkey\n\" \"\nvalue\n\"\n - Set a global\n\n\nTEH \"\nkey\n\"\n - Get a global value (if it exists)\n\n\n\n\nConstants\n\n\n\n\n\n\nVERSHUN\n - returns a string containing current firmware version\n\n\nWHOAMI?\n - returns integer of the unique serial number of the badge\n\n\n\n\nRandom values\n\n\nCRAZY GO NUTS \nmax\n - Generate a random value between \n= 0 and \n max.\n\n\nAccelerometer\n\n\n\n\n\n\nSIDEWAYZ\n - Get accelerometer X value that is side to side relative to body. \n\n\nUPWAYZ\n - Get accelerometer Y value that is up / down relative to body. \n\n\nOUTWAYZ\n - Get accelerometer Z value that is outward from body. \n\n\nTILTZ\n - Get angle of X/Y values with 0 degrees being the user's head and 180 degrees being the user's feet. 90/270s degrees are tilting right and left. \n\n\n\n\nI2C\n\n\n\n\nNote\n 7-bit addresses are used and will be shifted by one and R/W bit set per the standard. If your I2C slave is non-standard tough luck. \n\n\n\n\nNOMS \n7-bit address\n \nregister\n \nbyte\n Write a byte to a register\n\n\nNOMS \n7-bit address\n \nbyte\n Write a byte to an address\n\n\nNOM \n7-bit address\n \nregister\n Read a single byte from a register\n\n\n\n\nSystem Calls\n\n\n\n\nSpecific functions in the badge have been exposed as system calls. \n\n\n\n\nSYSTUM \"\ncall\n\"\n - Make a system call\n\n\n\n\n\n\n\n\n\n\ncall\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nABOUT\n\n\nShow about screen\n\n\n\n\n\n\nADDON_START\n\n\nStart the background addon task\n\n\n\n\n\n\nADDON_STOP\n\n\nStop the background addon task\n\n\n\n\n\n\nINTERRUPTS_ON\n\n\nAllow UI interruptions\n\n\n\n\n\n\nINTERRUPTS_OFF\n\n\nDo not allow UI interruptions\n\n\n\n\n\n\nBOTNET\n\n\nRun botnet UI\n\n\n\n\n\n\nNAME\n\n\nPick name\n\n\n\n\n\n\nSHOUTS\n\n\nShow shouts screen\n\n\n\n\n\n\nSKI\n\n\nRun ski free game\n\n\n\n\n\n\nSTATE_RESET\n\n\nFactor reset badge state\n\n\n\n\n\n\nTILT_ON\n\n\nEnable screen tilt\n\n\n\n\n\n\nTILT_OFF\n\n\nDisable screen tilt\n\n\n\n\n\n\nTIME\n\n\nShow current time GUI\n\n\n\n\n\n\n\n\nPeers\n\n\n\n\nBADGEZ?\n - Get a BUKKIT of current peers\n\n\n\n\nTime\n\n\n\n\nTIX\n - Get the current time in milliseconds\n\n\nPAWS \nms\n - Delay execution for x milliseconds\n\n\n\n\nFiles\n\n\n\n\n\n\nDAB \"\npath\n\"\n - Get a BUKKIT of file paths in a given path\n\n\n\n\nSee chip8.lulz for an example\n\n\nCHIP-8\n\n\n\n\nNACHOS \"\npath\n\"\n - Run a CHIP-8 or Super CHIP-8\n\n\n\n\nUnlocks\n\n\n\n\nCHEEZBURGER \"\ncode\n\"\n - Validate an unlock code\n\n\nL33T\n - Get the unlock state as an integer, unlock values are stored as a bitmask\n\n\n\n\nToken Reference\n\n\n\n\n\n\n\n\n\n\nToken\n\n\nDescription\n\n\n\n\n\n\n\n\n\n\nALL\n\n\nFill screen with a color\n\n\n\n\n\n\nBAD KITTEH\n\n\nClear button state\n\n\n\n\n\n\nBADGEZ?\n\n\nGet peer badges\n\n\n\n\n\n\nBLINK\n\n\nSet single LED\n\n\n\n\n\n\nBLINKIES\n\n\nSet all LEDs\n\n\n\n\n\n\nBOX\n\n\nDraw a Rectangle\n\n\n\n\n\n\nCATINABOX\n\n\nDraw a filled rectangle\n\n\n\n\n\n\nCATINAROUND\n\n\nCircle, filled\n\n\n\n\n\n\nCHEEZBURGER\n\n\nValidate Unlock\n\n\n\n\n\n\nCRAYON\n\n\n\n\n\n\n\n\nCRAZY GO NUTS\n\n\nRandom number\n\n\n\n\n\n\nCUT\n\n\nString char at index\n\n\n\n\n\n\nDAB\n\n\nList of files in a directory\n\n\n\n\n\n\nDOT\n\n\nDraw Pixel\n\n\n\n\n\n\nFREND\n\n\nInclude another LULZCODE file\n\n\n\n\n\n\nGNAW\n\n\nSubstring\n\n\n\n\n\n\nHOW BIG\n\n\nCalculate text height */\n\n\n\n\n\n\nHOW MANY IN\n\n\nCount BUKKIT items\n\n\n\n\n\n\nHOW SPREAD\n\n\nCalculate text width\n\n\n\n\n\n\nHOW TALL\n\n\nLCD Height\n\n\n\n\n\n\nHOW WIDE\n\n\nLCD Width\n\n\n\n\n\n\nHSSSVEE2\n\n\nHSV to 565\n\n\n\n\n\n\nHSSSVEE2BLINKY\n\n\nHSV to RGB\n\n\n\n\n\n\nINSIDEZ\n\n\nSet the Cursor Area\n\n\n\n\n\n\nISGO\n\n\nIs start pressed?\n\n\n\n\n\n\nISLEFF\n\n\nIs left pressed?\n\n\n\n\n\n\nISRIGHT\n\n\nIs right pressed?\n\n\n\n\n\n\nKATNIP\n\n\nDraw bitmap (raw file)\n\n\n\n\n\n\nKITTEH\n\n\nButton state\n\n\n\n\n\n\nKOUNT\n\n\nString length\n\n\n\n\n\n\nL33T\n\n\nGet unlock state\n\n\n\n\n\n\nLAZER\n\n\nMove the cursor\n\n\n\n\n\n\nLETR\n\n\nChar type\n\n\n\n\n\n\nLOLOL\n\n\nPush LED buffer\n\n\n\n\n\n\nLOLOLOL\n\n\nPush screen buffer\n\n\n\n\n\n\nMAH\n\n\nGlobal Set\n\n\n\n\n\n\nMEMBER\n\n\nStore a setting value\n\n\n\n\n\n\nMEOW\n\n\nPrint\n\n\n\n\n\n\nMEOWMIX\n\n\nGet user input\n\n\n\n\n\n\nNACHOS\n\n\nRun CHIP8 File\n\n\n\n\n\n\nNOM\n\n\nI2C read byte\n\n\n\n\n\n\nNOMS\n\n\nI2C write byte\n\n\n\n\n\n\nOHIMEMBER\n\n\nGet a setting value\n\n\n\n\n\n\nOUTWAYZ\n\n\nAccelerometer Y value\n\n\n\n\n\n\nPAWS\n\n\nDelay\n\n\n\n\n\n\nPOUNCE\n\n\nWait for button\n\n\n\n\n\n\nRICK ROLL WIT\n\n\nPlay Bling\n\n\n\n\n\n\nROUND\n\n\nCircle, empty\n\n\n\n\n\n\nROYGEEBIF2\n\n\nRGB to 565\n\n\n\n\n\n\nSHOUT\n\n\nSet font size\n\n\n\n\n\n\nSIDEWAYZ\n\n\nAccelerometer X value\n\n\n\n\n\n\nSTRAIGHT\n\n\nDraw a Line\n\n\n\n\n\n\nSYSTUM\n\n\nSystem call\n\n\n\n\n\n\nTEH\n\n\nGlobal Get\n\n\n\n\n\n\nTILTZ\n\n\nGet current angle in degree of X/Y axis\n\n\n\n\n\n\nTIX\n\n\nGet time millis\n\n\n\n\n\n\nTROLL\n\n\nRun file\n\n\n\n\n\n\nUPWAYZ\n\n\nAccelerometer Z value\n\n\n\n\n\n\nVERSHUN\n\n\nCurrent firmware version\n\n\n\n\n\n\nWATTA\n\n\nIs A pressed?\n\n\n\n\n\n\nWATTB\n\n\nIs B pressed?\n\n\n\n\n\n\nWHATSDOWN\n\n\nIs down pressed?\n\n\n\n\n\n\nWHATSUP\n\n\nIs up pressed?\n\n\n\n\n\n\nWHOAMI?\n\n\nGet unique id\n\n\n\n\n\n\nWINK\n\n\nEye led\n\n\n\n\n\n\nYO\n\n\nString set char at index", 
+            "title": "LULZCODE"
+        }, 
+        {
+            "location": "/lulzcode/#lulzcode", 
+            "text": "This page documents everything we added to LOLCODE to make LULZCODE.", 
+            "title": "LULZCODE"
+        }, 
+        {
+            "location": "/lulzcode/#api", 
+            "text": "LULZCODE implements API-level checking (as a warning). Current API-level is  2600 . All lulzcode files should start with  HAI 2600  and end with  KTHXBYE", 
+            "title": "API"
+        }, 
+        {
+            "location": "/lulzcode/#file-extensions", 
+            "text": "To work with the atom extensions (code highlighting, completion, etc) LULZCODE files should end with  .lulz  extensions.", 
+            "title": "File extensions"
+        }, 
+        {
+            "location": "/lulzcode/#frends", 
+            "text": "For code maintainability and portability,  FREND  has been added to LULZCODE. It is functionally equivalent to  #include  in c.  FREND  can be included recursively. However, this is not recommended as the same file may be included multiple times. It is a best practice only to make  FREND s at the top level LULZCODE file.   FREND \"path\"", 
+            "title": "FRENDs"
+        }, 
+        {
+            "location": "/lulzcode/#troll", 
+            "text": "TROLL \" path \"  - Execute another LULZCODE file. The LULZCODE pipeline can be memory intensive and it is not recommended to do this recursively as a new LULZCODE context is established for each  TROLL", 
+            "title": "TROLL"
+        }, 
+        {
+            "location": "/lulzcode/#letr", 
+            "text": "One type was added to LULZCODE:  LETR  in addition to  YARN ,  NOOB ,  TROOF , etc.  LETR  is a single character ( char  in C).  Example, this does an ascii conversion:  I HAS A var ITZ 65\nVISIBLE MAEK var A LETR", 
+            "title": "LETR"
+        }, 
+        {
+            "location": "/lulzcode/#yarn-manipulation", 
+            "text": "KOUNT \" YARN \" : Calculates  YARN  length.  GNAW \" YARN \"  start   end : Substring of a  YARN  CUT \" YARN \"  index : Gets the ascii decimal value of a single  LETR  in a  YARN  YO \" YARN \"  index  \" YARN \" : Overwrites part of a  YARN   Example:  BTW Prints 11\nVISIBLE KOUNT  Hello World \n\nBTW Returns llo\nGNAW  Hello World  2 4\n\nBTW Returns 111\nVISIBLE CUT  Hello World  4 \n\nBTW Prints l\nVISIBLE MAEK CUT  Hello World  4 A LETR\n\nBTW Prints Hello Badge\nI HAS A text ITZ  Hello World! \ntext R YO text 6  Badge", 
+            "title": "YARN Manipulation"
+        }, 
+        {
+            "location": "/lulzcode/#bukkits", 
+            "text": "LULZCODE uses LOLCODE BUKKITs but extends slightly.   HOW MANY IN  BUKKIT  - Counts the items in a BUKKIT", 
+            "title": "BUKKITS"
+        }, 
+        {
+            "location": "/lulzcode/#color", 
+            "text": "Colors are shared between LEDs and LCD. The LEDs use 32bit or discreet R, G, B values whereas the LCD uses 565 (16-bit) colors. These functions help with conversion between various colors.   ROYGEEBIFF2  r   g   b  - Convert an RGB value to 565 color (for LCD) where  r, g, b  are 0 to 255  HSSSVEE2  h   s   v  - Convert discreet hue saturation and value to 565 color (for LCD) where  h, s, v  are 0 to 255  HSSSVEE2BLINKY  h   s   v  - Convert discreet hue saturation and value to single 24-bit RGB value (for LEDs) where  h, s, v  are 0 to 255", 
+            "title": "Color"
+        }, 
+        {
+            "location": "/lulzcode/#lcd-graphics", 
+            "text": "There are a couple constants available to help with graphics.   HOW WIDE  - returns integer containing width in pixels of the display  HOW TALL  - returns integer containing height in pixels of the display", 
+            "title": "LCD Graphics"
+        }, 
+        {
+            "location": "/lulzcode/#screen-buffer", 
+            "text": "All graphics commands like  SHOUT  and  MEOW  and  STRAIGHT  draw to a screen buffer. The  LOLOLOL  command must be used to push the buffer to the screen.", 
+            "title": "Screen buffer"
+        }, 
+        {
+            "location": "/lulzcode/#text", 
+            "text": "CRAYON  color  - Set the current font color. Use  ROYGEEBIFF2  to generate a 565 color.  SHOUT \" value \"  - Set the current font. Valid values: SMALL ,  MEDIUM ,  LARGE ,  LUDICROUS  HOW SPREAD \" YARN \"  - Measure text width of  YARN  using current font  HOW BIG \" YARN \"  - Measure text height of  YARN  using current font  LAZER  x   y  - Move the cursor to X, Y coordinates.  Note: Cursor is moved relative to current font  INSIDEZ  x   y   width   height  - Set the cursor area (for word wrapping and clipping purposes)   MEOW \" text \"  - Print text to screen using current font at the current cursor location   Example:  BTW Set current font color to red\nCRAYON ROYGEEBIFF2 255 0 0\nBTW Use a large font\nSHOUT  LARGE \nBTW Move cursor to origin\nLAZER 0 0\nBTW Print\nMEOW  Hello World \nBTW Push screen buffer\nLOLOLOL", 
+            "title": "Text"
+        }, 
+        {
+            "location": "/lulzcode/#shapes", 
+            "text": "ALL  color  - Fill the screen with a color  DOT  x   y   color  - Draw a single pixel with a color  ROUND  x   y   radius   color  - Draw circle   CATINAROUND  x   y   radius   color  - filled circle  BOX  x   y   w   h   color  - Draw a rectangle  CATINABOX  x   y   w   h   color  - Draw a filled rectangle  STRAIGHT  x1   y1   x2   y2   color  - Draw a line between x1,y1 and x2,y2 with a color", 
+            "title": "Shapes"
+        }, 
+        {
+            "location": "/lulzcode/#graphics", 
+            "text": "KATNIP \" path_to_file \"  x   y   w   h  - Draw a raw file from SD card at x, y with width and height   Example:   BTW Draw an image at 0,0 with 100x100 dimensions then push the buffer\nKATNIP  /sdcard/gfx/image.raw  0 0 100 100\nLOLOLOL", 
+            "title": "Graphics"
+        }, 
+        {
+            "location": "/lulzcode/#leds", 
+            "text": "Like the LCD, LEDs are buffered. After setting color values for LEDs, be sure to push the LED buffer with  LOLOL .   Note:  The Eye LED is not buffered.   BLINK  index   color  - Set a single LED at index (0-30) to a 24-bit RGB value  BLINK  index   r   g   b  - set a single LED at index (0-30) to discreet R G B values  BLINKIES  color  - Set all LEDs to a 24-bit RGB value  BLINKIES  r   g   b  - Set all LEDs to discreet R G B values  LOLOL  - Push LED buffer  WINK  value  - Set the EYE LED to a value (0-255).     BTW Cycle all LEDs by hue\n  IM IN YR loop UPPIN YR i TIL BOTH SAEM i AN 255\n    I HAS A rgb ITZ HSSSVEE2BLINKY i 255 255\n    BLINKIES rgb\n    VISIBLE i\n    LOLOL\n\n    PAWS 50\n  IM OUTTA YR loop", 
+            "title": "LEDs"
+        }, 
+        {
+            "location": "/lulzcode/#bling", 
+            "text": "Use  RICK ROLL WIT  path   pattern   loop  to play raw files. Note: this bypasses the screen buffer and is streamed directly to the screen to get maximum FPS. Any other drawing operations will have odd side effects.   path  - Path to to raw file to play  pattern  - Integer value for LED pattern to run along with bling  loop  -  WIN  to loop.  FAIL  to play once. Looping allows the user to quit with the  LEFT  button. If looping is disabled, user input is ignored and it will quit at the end of the animation.      value  LED Pattern Description      0  None    1  Hue cycle    2  Polar (accelerometer)    3  Sparkle    4  Double Sweep    5  Flames    6  Bouncing    7  Chasing Red    8  Chasing Green    9  Chasing Blue    10  Chasing Yellow    11  Kitt    12  Rainbow    13  Roller Coaster Red    14  Roller Coaster Green    15  Roller Coaster Blue    16  Roller Coaster Yellow    17  Red, Green, Blue, Yellow sweep     These are also defined in led_patterns.lol  Example:  BTW Play rick roll with roller coaster yellow LED pattern once\nRICK ROLL WIT  /sdcard/bling/rick.raw  led_pattern_roller_coaster_yellow FAIL", 
+            "title": "Bling!"
+        }, 
+        {
+            "location": "/lulzcode/#buttons", 
+            "text": "There are 7 buttons available on the badge. The automatic screen inversion properly flips the buttons as well. U, D, L, R buttons are left of the screen. A and B buttons are below the screen. And the action button is to the right of the screen.  Button state is managed as a single 8-bit value with bitmasks for each button. The mask is not automatically cleared in all cases.   KITTEH  - Get the current button state (bitmask)  BAD KITTEH  - Clear button state   POUNCE  - Block the badge until a button is pressed.  Note:  This may return early if there was a timeout waiting. Check the button value with  KITTEH  to ensure something was actually pressed and a timeout did not occur.  WHATSUP  - Is up pressed?  WHATSDOWN  - Is down pressed?  ISLEFF  - Is left pressed?  ISRIGHT  - Is right pressed?  WATTA  - Is A pressed?  WATTB  - Is B pressed?  ISGO  - Is start pressed?", 
+            "title": "Buttons"
+        }, 
+        {
+            "location": "/lulzcode/#user-input", 
+            "text": "Due to performance issues, user input was written in C and wrapped in LULZCODE. Use the  MEOMIX  command to return a string from the user up to 8 characters. This function will block until the user returns.  Format:  MEOWMIX  prompt   Initial Value   Max Length  Example:  MEOMIX  Name   Bender  8", 
+            "title": "User Input"
+        }, 
+        {
+            "location": "/lulzcode/#badge-state", 
+            "text": "OHIMEMBER \" key \"  - Gets a value stored at \"key\"  MEMBER \" key \" \" value \"  - Sets a value stored at key   The following keys are available. Not all are writeable     Key  Description  Read  Write      name  Player name  X  X    botnet_points  Defense rating  X  -    botnet_experience  Experience  X  -    botnet_level  Player level  X  -    botnet_name  Name of botnet player is in  X  -    voltage  Battery voltage  X  -    brightness  Screen / LED level  X  X    score_pong  Current pong high score  X  -    score_ski  Current ski free high score  X  X", 
+            "title": "Badge State"
+        }, 
+        {
+            "location": "/lulzcode/#globals", 
+            "text": "Globals can be set and shared between LULZCODE contexts. Globals are  not  persisted and only stored as long as the badge has power.   MAH \" key \" \" value \"  - Set a global  TEH \" key \"  - Get a global value (if it exists)", 
+            "title": "Globals"
+        }, 
+        {
+            "location": "/lulzcode/#constants", 
+            "text": "VERSHUN  - returns a string containing current firmware version  WHOAMI?  - returns integer of the unique serial number of the badge", 
+            "title": "Constants"
+        }, 
+        {
+            "location": "/lulzcode/#random-values", 
+            "text": "CRAZY GO NUTS  max  - Generate a random value between  = 0 and   max.", 
+            "title": "Random values"
+        }, 
+        {
+            "location": "/lulzcode/#accelerometer", 
+            "text": "SIDEWAYZ  - Get accelerometer X value that is side to side relative to body.   UPWAYZ  - Get accelerometer Y value that is up / down relative to body.   OUTWAYZ  - Get accelerometer Z value that is outward from body.   TILTZ  - Get angle of X/Y values with 0 degrees being the user's head and 180 degrees being the user's feet. 90/270s degrees are tilting right and left.", 
+            "title": "Accelerometer"
+        }, 
+        {
+            "location": "/lulzcode/#i2c", 
+            "text": "Note  7-bit addresses are used and will be shifted by one and R/W bit set per the standard. If your I2C slave is non-standard tough luck.    NOMS  7-bit address   register   byte  Write a byte to a register  NOMS  7-bit address   byte  Write a byte to an address  NOM  7-bit address   register  Read a single byte from a register", 
+            "title": "I2C"
+        }, 
+        {
+            "location": "/lulzcode/#system-calls", 
+            "text": "Specific functions in the badge have been exposed as system calls.    SYSTUM \" call \"  - Make a system call      call  Description      ABOUT  Show about screen    ADDON_START  Start the background addon task    ADDON_STOP  Stop the background addon task    INTERRUPTS_ON  Allow UI interruptions    INTERRUPTS_OFF  Do not allow UI interruptions    BOTNET  Run botnet UI    NAME  Pick name    SHOUTS  Show shouts screen    SKI  Run ski free game    STATE_RESET  Factor reset badge state    TILT_ON  Enable screen tilt    TILT_OFF  Disable screen tilt    TIME  Show current time GUI", 
+            "title": "System Calls"
+        }, 
+        {
+            "location": "/lulzcode/#peers", 
+            "text": "BADGEZ?  - Get a BUKKIT of current peers", 
+            "title": "Peers"
+        }, 
+        {
+            "location": "/lulzcode/#time", 
+            "text": "TIX  - Get the current time in milliseconds  PAWS  ms  - Delay execution for x milliseconds", 
+            "title": "Time"
+        }, 
+        {
+            "location": "/lulzcode/#files", 
+            "text": "DAB \" path \"  - Get a BUKKIT of file paths in a given path   See chip8.lulz for an example", 
+            "title": "Files"
+        }, 
+        {
+            "location": "/lulzcode/#chip-8", 
+            "text": "NACHOS \" path \"  - Run a CHIP-8 or Super CHIP-8", 
+            "title": "CHIP-8"
+        }, 
+        {
+            "location": "/lulzcode/#unlocks", 
+            "text": "CHEEZBURGER \" code \"  - Validate an unlock code  L33T  - Get the unlock state as an integer, unlock values are stored as a bitmask", 
+            "title": "Unlocks"
+        }, 
+        {
+            "location": "/lulzcode/#token-reference", 
+            "text": "Token  Description      ALL  Fill screen with a color    BAD KITTEH  Clear button state    BADGEZ?  Get peer badges    BLINK  Set single LED    BLINKIES  Set all LEDs    BOX  Draw a Rectangle    CATINABOX  Draw a filled rectangle    CATINAROUND  Circle, filled    CHEEZBURGER  Validate Unlock    CRAYON     CRAZY GO NUTS  Random number    CUT  String char at index    DAB  List of files in a directory    DOT  Draw Pixel    FREND  Include another LULZCODE file    GNAW  Substring    HOW BIG  Calculate text height */    HOW MANY IN  Count BUKKIT items    HOW SPREAD  Calculate text width    HOW TALL  LCD Height    HOW WIDE  LCD Width    HSSSVEE2  HSV to 565    HSSSVEE2BLINKY  HSV to RGB    INSIDEZ  Set the Cursor Area    ISGO  Is start pressed?    ISLEFF  Is left pressed?    ISRIGHT  Is right pressed?    KATNIP  Draw bitmap (raw file)    KITTEH  Button state    KOUNT  String length    L33T  Get unlock state    LAZER  Move the cursor    LETR  Char type    LOLOL  Push LED buffer    LOLOLOL  Push screen buffer    MAH  Global Set    MEMBER  Store a setting value    MEOW  Print    MEOWMIX  Get user input    NACHOS  Run CHIP8 File    NOM  I2C read byte    NOMS  I2C write byte    OHIMEMBER  Get a setting value    OUTWAYZ  Accelerometer Y value    PAWS  Delay    POUNCE  Wait for button    RICK ROLL WIT  Play Bling    ROUND  Circle, empty    ROYGEEBIF2  RGB to 565    SHOUT  Set font size    SIDEWAYZ  Accelerometer X value    STRAIGHT  Draw a Line    SYSTUM  System call    TEH  Global Get    TILTZ  Get current angle in degree of X/Y axis    TIX  Get time millis    TROLL  Run file    UPWAYZ  Accelerometer Z value    VERSHUN  Current firmware version    WATTA  Is A pressed?    WATTB  Is B pressed?    WHATSDOWN  Is down pressed?    WHATSUP  Is up pressed?    WHOAMI?  Get unique id    WINK  Eye led    YO  String set char at index", 
+            "title": "Token Reference"
+        }, 
+        {
+            "location": "/api/", 
+            "text": "Menu\n\n\nContained in \n/sdcard/menu.lol\n\n\nBUKKIT definition\n\n\n\n\ncount\n - Number of menu items contained in the BUKKIT\n\n\ntop\n - Index of first item to display in the list\n\n\nselected\n - Index of currently selected item\n\n\nlabel\n - BUKKIT of menu labels\n\n\ncallback\n - BUKKIT of menu callbacks\n\n\npreview\n - BUKKIT of paths to preview images (must be in RAW format and 220x176)\n\n\n\n\nHelpers\n\n\n\n\ncreate_menu YR \nmenu\n MKAY\n - Menu BUKKIT constructor\n\n\nadd_item_to_menu YR \nmenu\n AN YR \nlabel\n AN YR \ncallback\n AN YR \npreview\n MKAY\n - Add a menu item to the menu BUKKIT\n\n\n\n\nExecution\n\n\nRun \ndo_menu\n passing the BUKKIT. The function will block until the menu quits which is usually triggered by the user. When an item is selected the associated callback will be run.\n\n\nReturn Value\n\n\nNone.\n\n\nExample\n\n\n  FREND \n/sdcard/include.lol\n\n  FREND \n/sdcard/menu.lol\n\n\n  HOW IZ I first_item_cb\n    VISIBLE \nFirst Item Selected\n\n  IF U SAY SO\n\n  HOW IZ I second_item_cb\n    VISIBLE \nSecond Item Selected\n\n  IF U SAY SO\n\n  I HAS A menu ITZ A BUKKIT\n  I IZ create_menu YR menu MKAY\n  I IZ add_item_to_menu YR menu AN YR \nBling\n AN YR menu_bling AN YR \n/sdcard/bling/hypnotoad1.preview\n MKAY\n  I IZ add_item_to_menu YR menu AN YR \nSettings\n AN YR menu_settings AN YR \n/sdcard/bling/settings.preview\n MKAY\n\n  I IZ do_menu YR menu MKAY\n\n\n\n\nPopup\n\n\nContained in \n/sdcard/popup.lol\n\n\nBUKKIT definition\n\n\n\n\ntitle\n - Text to put in the title bar - careful, limited space\n\n\nbody\n - Text to put in the body. This will be scrollable\n\n\nleft\n - Text to put in the left button. \n\n\nRight\n - Text to put in the right button.\n\n\n\n\nExecution\n\n\nRun \ndo_popup\n passing the BUKKIT. The function will block until the user selects an option (left or right).\n\n\nReturn Value\n\n\nThe text in the button selected by the user.\n\n\nExample\n\n\n HAI 100\n  FREND \n/sdcard/include.lol\n\n  FREND \n/sdcard/popup.lol\n\n\n  I HAS A popup ITZ A BUKKIT\n  popup HAS A title ITZ \nPopup Test\n\n  popup HAS A body ITZ \nThis is a test of the popup in LULZCODE.\n\n  popup HAS A left ITZ \nCancel\n\n  popup HAS A right ITZ \nOk\n\n  VISIBLE \nPopup result = \n I IZ do_popup YR popup MKAY\nKTHXBYE\n\n\n\n\nTitle Bar\n\n\nRun \ndo_title_bar\n passing a short label to render. This will render to the gfx buffer but not push. Use \nLOLOLOL\n when done rendering the UI.\n\n\nThe location of the line in the title bar is globally stored in \ntitle_bar_height\n variable.\n\n\nGlobal Colors\n\n\nContained in /sdcard/include.lol\n\n\n\n\nBlack: \nDARK\n\n\nWhite: \nLIGHT\n\n\nBlue: `BLUEISH\n\n\nGreen: \nGREENISH\n\n\nRed: \nREDISH\n\n\nYellow: \nYELLOWISH\n\n\nDEFCON Green: \nHACKER_GREEN\n\n\nDEFCON Red: \nHACKER_RED\n\n\nDEFCON Gray: \nHACKER_GRAY\n\n\nDEFCON Blue: \nHACKER_BLUE", 
+            "title": "API"
+        }, 
+        {
+            "location": "/api/#menu", 
+            "text": "Contained in  /sdcard/menu.lol", 
+            "title": "Menu"
+        }, 
+        {
+            "location": "/api/#bukkit-definition", 
+            "text": "count  - Number of menu items contained in the BUKKIT  top  - Index of first item to display in the list  selected  - Index of currently selected item  label  - BUKKIT of menu labels  callback  - BUKKIT of menu callbacks  preview  - BUKKIT of paths to preview images (must be in RAW format and 220x176)", 
+            "title": "BUKKIT definition"
+        }, 
+        {
+            "location": "/api/#helpers", 
+            "text": "create_menu YR  menu  MKAY  - Menu BUKKIT constructor  add_item_to_menu YR  menu  AN YR  label  AN YR  callback  AN YR  preview  MKAY  - Add a menu item to the menu BUKKIT", 
+            "title": "Helpers"
+        }, 
+        {
+            "location": "/api/#execution", 
+            "text": "Run  do_menu  passing the BUKKIT. The function will block until the menu quits which is usually triggered by the user. When an item is selected the associated callback will be run.", 
+            "title": "Execution"
+        }, 
+        {
+            "location": "/api/#return-value", 
+            "text": "None.", 
+            "title": "Return Value"
+        }, 
+        {
+            "location": "/api/#example", 
+            "text": "FREND  /sdcard/include.lol \n  FREND  /sdcard/menu.lol \n\n  HOW IZ I first_item_cb\n    VISIBLE  First Item Selected \n  IF U SAY SO\n\n  HOW IZ I second_item_cb\n    VISIBLE  Second Item Selected \n  IF U SAY SO\n\n  I HAS A menu ITZ A BUKKIT\n  I IZ create_menu YR menu MKAY\n  I IZ add_item_to_menu YR menu AN YR  Bling  AN YR menu_bling AN YR  /sdcard/bling/hypnotoad1.preview  MKAY\n  I IZ add_item_to_menu YR menu AN YR  Settings  AN YR menu_settings AN YR  /sdcard/bling/settings.preview  MKAY\n\n  I IZ do_menu YR menu MKAY", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/api/#popup", 
+            "text": "Contained in  /sdcard/popup.lol", 
+            "title": "Popup"
+        }, 
+        {
+            "location": "/api/#bukkit-definition_1", 
+            "text": "title  - Text to put in the title bar - careful, limited space  body  - Text to put in the body. This will be scrollable  left  - Text to put in the left button.   Right  - Text to put in the right button.", 
+            "title": "BUKKIT definition"
+        }, 
+        {
+            "location": "/api/#execution_1", 
+            "text": "Run  do_popup  passing the BUKKIT. The function will block until the user selects an option (left or right).", 
+            "title": "Execution"
+        }, 
+        {
+            "location": "/api/#return-value_1", 
+            "text": "The text in the button selected by the user.", 
+            "title": "Return Value"
+        }, 
+        {
+            "location": "/api/#example_1", 
+            "text": "HAI 100\n  FREND  /sdcard/include.lol \n  FREND  /sdcard/popup.lol \n\n  I HAS A popup ITZ A BUKKIT\n  popup HAS A title ITZ  Popup Test \n  popup HAS A body ITZ  This is a test of the popup in LULZCODE. \n  popup HAS A left ITZ  Cancel \n  popup HAS A right ITZ  Ok \n  VISIBLE  Popup result =   I IZ do_popup YR popup MKAY\nKTHXBYE", 
+            "title": "Example"
+        }, 
+        {
+            "location": "/api/#title-bar", 
+            "text": "Run  do_title_bar  passing a short label to render. This will render to the gfx buffer but not push. Use  LOLOLOL  when done rendering the UI.  The location of the line in the title bar is globally stored in  title_bar_height  variable.", 
+            "title": "Title Bar"
+        }, 
+        {
+            "location": "/api/#global-colors", 
+            "text": "Contained in /sdcard/include.lol   Black:  DARK  White:  LIGHT  Blue: `BLUEISH  Green:  GREENISH  Red:  REDISH  Yellow:  YELLOWISH  DEFCON Green:  HACKER_GREEN  DEFCON Red:  HACKER_RED  DEFCON Gray:  HACKER_GRAY  DEFCON Blue:  HACKER_BLUE", 
+            "title": "Global Colors"
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+HAI 2600
+  FREND "/sdcard/include.lulz"
+
+  I HAS A player_x ITZ -5
+  I HAS A player_y ITZ 88
+  I HAS A player_w ITZ 61
+  I HAS A player_h ITZ 20
+  I HAS A player_right ITZ SUM OF player_x AN player_w
+  I HAS A player_speed ITZ 6
+  I HAS A score ITZ 0
+  I HAS A pipe_w ITZ 40
+  I HAS A pipe_h ITZ 138
+  I HAS A pipe_distance ITZ 60
+  I HAS A pipe_space ITZ 130
+  I HAS A pipe_speed ITZ 9
+  I HAS A middle ITZ DIFF OF QUOSHUNT OF HOW TALL AN 2 AN pipe_h
+
+
+  BTW PIPE 1
+  I HAS A pipe1 ITZ A BUKKIT
+  pipe1 HAS A x ITZ 100
+  pipe1 HAS A top ITZ DIFF OF -50 AN CRAZY GO NUTS 50
+  pipe1 HAS A bottom ITZ SUM OF SUM OF pipe1'Z top AN pipe_h AN pipe_distance
+
+  BTW PIPE 2
+  I HAS A pipe2 ITZ A BUKKIT
+  pipe2 HAS A x ITZ SUM OF pipe1'Z x AN pipe_space
+  pipe2 HAS A top ITZ DIFF OF -50 AN CRAZY GO NUTS 50
+  pipe2 HAS A bottom ITZ SUM OF SUM OF pipe2'Z top AN pipe_h AN pipe_distance
+
+  BTW PIPE 3
+  I HAS A pipe3 ITZ A BUKKIT
+  pipe3 HAS A x ITZ 220
+  pipe3 HAS A h ITZ CRAZY GO NUTS 60
+
+
+  I HAS A background ITZ ROYGEEBIF2 176 220 248
+
+  HOW IZ I game_over
+    VISIBLE "GAME OVER Score=" score
+    PAWS 100
+    BAD KITTEH
+    LAZER 40 80
+    CRAYON ROYGEEBIF2 255 0 0
+    MEOW "GAME OVER"
+    LOLOLOL
+    PAWS 1000
+    POUNCE
+    PAWS 100
+    BAD KITTEH
+  IF U SAY SO
+
+
+  IM IN YR loop
+    ALL background
+
+    KATNIP "/sdcard/gfx/ship.raw" player_x player_y player_w player_h
+
+    BTW Draw PIPE 1
+    KATNIP "/sdcard/gfx/pipe-top.raw" pipe1'Z x pipe1'Z top pipe_w pipe_h
+    KATNIP "/sdcard/gfx/pipe-bottom.raw" pipe1'Z x pipe1'Z bottom pipe_w pipe_h
+
+    KATNIP "/sdcard/gfx/pipe-top.raw" pipe2'Z x pipe2'Z top pipe_w pipe_h
+    KATNIP "/sdcard/gfx/pipe-bottom.raw" pipe2'Z x pipe2'Z bottom pipe_w pipe_h
+
+    SHOUT "LARGE"
+    LAZER 2 0
+    CRAYON LIGHT
+    MEOW score
+
+    BTW KATNIP "/sdcard/gfx/pipe-top.raw" pipe3'Z x DIFF OF middle AN pipe3'Z h pipe_w pipe_h
+    BTW KATNIP "/sdcard/gfx/pipe-bottom.raw" pipe3'Z x SUM OF SUM OF DIFF OF middle AN pipe3'Z h AN pipe_distance AN pipe_h pipe_w pipe_h
+    LOLOLOL
+
+    BTW Detect pipe 1 collision
+    DIFFRINT SUM OF pipe1'Z x AN 10 AN BIGGR OF SUM OF pipe1'Z x AN 10 AN player_right, O RLY?, YA RLY
+      BTW detect collision with top pipe
+      DIFFRINT player_y AN BIGGR OF player_y AN SUM OF pipe1'Z top AN pipe_h, O RLY?, YA RLY
+          I IZ game_over MKAY
+        GTFO
+      OIC
+
+      BTW detect collision with bottom pipe
+      DIFFRINT SUM OF player_y AN player_h AN SMALLR OF SUM OF player_y AN player_h AN pipe1'Z bottom, O RLY?, YA RLY
+          I IZ game_over MKAY
+        GTFO
+      OIC
+    OIC
+
+    BTW Detect pipe 2 collision
+    DIFFRINT SUM OF pipe2'Z x AN 10 AN BIGGR OF SUM OF pipe2'Z x AN 10 player_right, O RLY?, YA RLY
+      BTW detect collision with top pipe
+      DIFFRINT player_y AN BIGGR OF player_y AN SUM OF pipe2'Z top AN pipe_h, O RLY?, YA RLY
+          I IZ game_over MKAY
+        GTFO
+      OIC
+
+      BTW detect collision with bottom pipe
+      DIFFRINT SUM OF player_y AN player_h AN SMALLR OF SUM OF player_y AN player_h AN pipe2'Z bottom, O RLY?, YA RLY
+          I IZ game_over MKAY
+        GTFO
+      OIC
+    OIC
+
+    WHATSUP, O RLY?, YA RLY
+      player_y R DIFF OF player_y AN player_speed
+    OIC
+
+    WHATSDOWN, O RLY?, YA RLY
+      player_y R SUM OF player_y AN player_speed
+    OIC
+
+    ISLEFF, O RLY?, YA RLY
+      BAD KITTEH
+      GTFO
+    OIC
+
+    pipe1'Z x R DIFF OF pipe1'Z x AN pipe_speed
+    pipe2'Z x R DIFF OF pipe2'Z x AN pipe_speed
+    BTW pipe3'Z x R DIFF OF pipe3'Z x AN pipe_speed
+
+    DIFFRINT pipe1'Z x AN BIGGR OF pipe1'Z x AN DIFF OF 0 AN pipe_w, O RLY?, YA RLY
+      pipe1'Z x R SUM OF pipe2'Z x AN pipe_space
+      pipe1'Z top R DIFF OF -50 AN CRAZY GO NUTS 50
+      pipe1'Z bottom R SUM OF SUM OF pipe1'Z top AN pipe_h AN pipe_distance
+      score R SUM OF score AN 1
+    OIC
+
+    DIFFRINT pipe2'Z x AN BIGGR OF pipe2'Z x AN DIFF OF 0 AN pipe_w, O RLY?, YA RLY
+      pipe2'Z x R SUM OF pipe1'Z x AN pipe_space
+      pipe2'Z top R DIFF OF -50 AN CRAZY GO NUTS 50
+      pipe2'Z bottom R SUM OF SUM OF pipe2'Z top AN pipe_h AN pipe_distance
+      score R SUM OF score AN 1
+    OIC
+
+
+    BTW DIFFRINT pipe3'Z x AN BIGGR OF pipe3'Z x AN 0, O RLY?, YA RLY
+    BTW   pipe3'Z x R HOW WIDE
+    BTW OIC
+
+    PAWS 20
+
+  IM OUTTA YR loop
+KTHXBYE
