@@ -17,3 +17,14 @@ The badge's eye will _very slowly_ blink as it flashes itself. When complete, th
 To check the firmware version, go to *System --> About*
 
 *NOTE: It is pointless to check the hash in the `.sha256` file. It will not match.*
+
+## Changelog ##
+
+#### v1.1 ####
+* Stability improvements to the SD Card driver at the expense of some FPS
+* Minor improvements to usability of the Pick Name UI
+* Thank you to the beta testers for the honest and plentiful feedback of SD card issues. Quality of the SD cards we provided with the badges is poor :( but this firmware update should ensure that good SD cards work properly
+
+#### v1.0 ####
+* Initial Release, all Kickstarters received this version
+
