@@ -2,14 +2,14 @@ BTW Expose title bar height
 I HAS A title_bar_height ITZ 15
 
 HOW IZ I do_title_bar YR label
-  I HAS A botnet ITZ SMOOSH "[" AN OHIMEMBER "botnet_name" AN "] " MKAY
+  I HAS A botnet ITZ SMOOSH "[" AN OHIMEMBER "botnet_name" AN "] - L" AN OHIMEMBER "botnet_level" AN " - " AN OHIMEMBER "voltage" AN "v" MKAY
 
   BTW Render top bar
   SHOUT "SMALL"
   LAZER 0 0
   CRAYON WESTERN_YELLOW
   MEOW label
-  LAZER DIFF OF HOW WIDE AN HOW SPREAD botnet 0
+  LAZER DIFF OF HOW WIDE AN SUM OF HOW SPREAD botnet AN 5 0
   MEOW botnet
   STRAIGHT 0 title_bar_height DIFF OF HOW WIDE AN 1 title_bar_height LIGHT
 IF U SAY SO

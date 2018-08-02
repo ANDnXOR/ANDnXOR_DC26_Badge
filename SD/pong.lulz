@@ -113,11 +113,27 @@ HAI 2600
       GTFO
     OIC
 
+    WATTA, O RLY?, YA RLY
+      px R DIFF OF px AN pdx
+      BTW keep player on screen
+      BOTH SAEM px AN SMALLR OF px AN 0, O RLY?, YA RLY
+        px R 0
+      OIC
+    OIC
+
     ISLEFF, O RLY?, YA RLY
       px R DIFF OF px AN pdx
       BTW keep player on screen
       BOTH SAEM px AN SMALLR OF px AN 0, O RLY?, YA RLY
         px R 0
+      OIC
+    OIC
+
+    WATTB, O RLY?, YA RLY
+      px R SUM OF px AN pdx
+      BTW keep player on screen
+      BOTH SAEM px AN BIGGR OF px AN DIFF OF HOW WIDE AN pw, O RLY?, YA RLY
+        px R DIFF OF HOW WIDE AN pw
       OIC
     OIC
 

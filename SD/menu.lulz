@@ -31,7 +31,7 @@ HOW IZ I do_menu YR menu
       KATNIP menu'Z preview'Z SRS menu'Z selected 0 0 HOW WIDE HOW TALL
 
       BTW Render top bar
-      I HAS A label ITZ SMOOSH OHIMEMBER "name" "[" OHIMEMBER "botnet_level" "]" MKAY
+      I HAS A label ITZ OHIMEMBER "name"
       I IZ do_title_bar YR label MKAY
 
       SHOUT "LARGE"
