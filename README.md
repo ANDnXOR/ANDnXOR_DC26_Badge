@@ -6,7 +6,7 @@ To create a new SD card, format the card with FAT32 then copy the contents of SD
 
 *Note: due to the large size of some files, git lfs is required: https://git-lfs.github.com/ *
 
-# LULZCODE Support for Atom Editor #
+## LULZCODE Support for Atom Editor ##
 
 LULZCODE is supported by Atom using our plugin: https://atom.io/packages/atom-lulzcode
 
@@ -25,6 +25,13 @@ To check the firmware version, go to *System --> About*
 *NOTE: It is pointless to check the hash in the `.sha256` file. It will not match.*
 
 ## Changelog ##
+
+#### v1.2 ####
+* Huge SD stability improvements. Bad blocks no longer crash bling, but will drop frames. Bad blocks are still not readable but we no longer crash.
+* Updated to latest ESP-IDF 3.1 beta
+* Improved usability of menus based on user feedback
+* Fixed ADC not-calibrated (battery voltage was incorrect)
+* Added BLE peer hello for Trans Ionospheric badge
 
 #### v1.1 ####
 * Stability improvements to the SD Card driver at the expense of some FPS
