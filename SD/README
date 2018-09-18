@@ -9,15 +9,7 @@ We're back with raw RGB565 files for bling. This lets us push more FPS for
 ultimate blast processing. Use the following command to convert just about
 any video or gif file to raw.
 
-Generate Raw File:
-
-ffmpeg -i <INPUT.GIF> -y -loglevel error -vf "scale=220:176:force_original_aspect_ratio=decrease,pad=220:176:(ow-iw)/2:(oh-ih)/2"  -r 11 -f rawvideo -s 220x176 -pix_fmt rgb565be <OUTPUT.RAW>
-
-Generate Raw Preview
-
-ffmpeg -i <INPUT.GIF> -frames 1 -vframes 1 -f image2 -s 220x176 -pix_fmt rgb565be <OUTPUT>.raw
-mv <OUTPUT>.raw <OUTPUT>.preview
-
+ffmpeg -i <INPUT.RAW> -y -loglevel error -vf "scale=220:176:force_original_aspect_ratio=decrease,pad=220:176:(ow-iw)/2:(oh-ih)/2"  -r 20 -f rawvideo -s 220x176 -pix_fmt rgb565be <OUTPUT.RAW>
 
 
 SCREENSHOTS

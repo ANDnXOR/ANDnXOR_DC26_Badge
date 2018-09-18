@@ -1,0 +1,136 @@
+menu "AND!XOR Configuration"
+
+choice BADGE_TYPE
+   bool "Badge Type"
+   default BADGE_TYPE_HUMAN
+   help
+       Select a badge type to ensure correct peripherals and options are set
+config BADGE_TYPE_HUMAN
+   bool "Human"
+config BADGE_TYPE_MASTER
+   bool "Master"
+config BADGE_TYPE_TEST
+	 bool "Macrofab Test Mode"
+endchoice
+
+config INVERT_SCREEN
+	bool "Invert Screen"
+	default n
+	help
+		Invert screen for older badges like "Pickle Rick"
+
+config PEERS_HELLO_RATE_LIMIT
+    int "Hello Rate Limit (ms)"
+    range 1000 600000
+    default 300000
+    help
+        Minimium time between badge hellos in milliseconds
+
+
+config BROADCAST_RATE_LIMIT
+    int "Broadcast Interrupt Limit (ms)"
+    range 1000 600000
+    default 300000
+    help
+        Minimium time between badge broadcast interrupts in milliseconds
+
+config BOTNET_BLING_RATE_LIMIT
+	int "Botnet Bling Rate Limit (ms)"
+	range 1000 600000
+	default 300000
+	help
+		Minimum time between botnet bling animations in milliseconds
+
+config BOTNET_AP_RICK_ROLL_TIME
+	int "Botnet AP Rick Roll time (ms)"
+	range 30000 600000
+	default 120000
+	help
+		Length of time in milliseconds to rick roll wifi APs
+
+config BOTNET_AP_RICK_ROLL_ROTATION_TIME
+	int "Botnet AP RIck Roll Rotation time (ms)"
+	range 1000 60000
+	default 30000
+	help
+		Lenght of time in milliseconds between rick roll lyrics change
+
+config BOTNET_INVERT_COLORS_TIME
+	int "Screen colors inversion time (ms)"
+	range 30000 600000
+	default 300000
+	help
+		Length of time in milliseconds to rick roll wifi APs
+
+config BOTNET_RANDOM_BUTTONS_TIME
+	int "Randomize buttons inversion time (ms)"
+	range 30000 300000
+	default 60000
+	help
+		Length of time in milliseconds randomize buttons
+
+config PEERS_SAVE_INTERVAL
+	int "Peers save interval (ms)"
+	range 30000 600000
+	default 60000
+	help
+		Time between saving peers to SD card
+
+config DEVELOPER_MODE
+    bool "Developer Mode"
+    default 0
+    help
+        Disable startups and go right into LULZCODE upload mode
+
+config SD_CARD_FAILSAFE
+	bool "SD Card failsafe (slow) mode"
+	default 1
+	help
+		Put SD Card into a slow mode that should work without pull-ups
+
+config SD_CARD_CD_OVERRIDE
+	bool "Override SD Card CD Pin"
+	default 0
+	help
+		Ignore CD pin on SD Card
+
+config SHOW_FPS
+	bool "Show FPS during bling"
+	default 0
+	help
+		Print to log the FPS of bling being played
+
+config WIFI_CONNECT_TIMEOUT
+	int "Wifi Connect Timeout (ms)"
+	range 0 60000
+	default 10000
+	help
+		Max time to wait to connect to AP
+
+config WIFI_SSID
+	string "SSID"
+
+config WIFI_PASSWORD
+	string "Password"
+        
+config STORE_HISTORY
+    bool "Store command history in flash"
+    default y
+    help
+        Linenoise line editing library provides functions to save and load
+        command history. If this option is enabled, initalizes a FAT filesystem
+        and uses it to store command history.
+
+config DEBUG_BLE
+		bool "Debug BLE"
+		default 0
+		help
+			Debug BLE to log
+
+config OTA_RATE_LIMIT_SECONDS
+	int "OTA Rate Limit (seconds)"
+	range 10 1000
+	default 60
+	help
+		Minimium time in seconds between OTA connection attempts
+endmenu
