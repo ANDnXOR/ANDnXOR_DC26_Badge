@@ -26,6 +26,9 @@ To check the firmware version, go to *System --> About*
 
 ## Changelog ##
 
+#### v1.3 ####
+* Minor tweaks to further improve SD reliability / avoid corruption.
+
 #### v1.2 ####
 * Huge SD stability improvements. Bad blocks no longer crash bling, but will drop frames. Bad blocks are still not readable but we no longer crash.
 * Updated to latest ESP-IDF 3.1 beta
