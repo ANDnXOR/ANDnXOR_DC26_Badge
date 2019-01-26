@@ -1,0 +1,6 @@
+C1: 0.1uF 0805
+C2: 1uF 0805
+D*: RED LED 0805 (16 count)
+J1: M2 Screw
+R*: 1k ohm 0805
+U1: MCP23017 SSOP-28
